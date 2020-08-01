@@ -1,0 +1,72 @@
+.p-main--btn:hover {
+  background-color: $color_sub;
+  color:$color_default;
+  border: 1px solid $color_default;
+}
+.p-main--btn {
+    color:$color_sub;
+    background-color: $color_default;
+    border: 1px solid $color_sub;
+    padding: 2em 1em;
+    border-radius: $space_xl;
+    width: 100%;
+}
+.p-btn--close {
+  background:$color_default;
+  color:$color_sub;
+  padding:$space_s $font-size_s;
+  border:none;
+  cursor: grab;
+}
+.p-btn--go {
+  background-color: $color_sub;
+  color:$color_default;
+  border: 1px solid $color_default;
+  padding: 2em 1em;
+ border-radius: $space_m;
+}
+.p-btn--delete {
+    cursor: pointer;
+    color: $color_sub;
+    line-height: $space_xxl;
+    font-size: 1.2rem;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    background: $color_default;
+    border-radius: $space_m;
+    margin: $space_3l auto 0px;
+}
+.p-btn--submit {
+    cursor: pointer;
+    color: $color_sub;
+    line-height: $space_xxl;
+    font-size: 1.2rem;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    background: $color_default;
+    border-radius: $space_m;
+    margin:$space_3l  auto 0px;
+}
+  .p-btn--search {
+    margin-top: $space_xl;
+    background-color: $color_default;
+    color: $color_sub;
+    width: 100%;
+  }
+  
+  .p-btn--purchase {
+    margin-top: $space_xl;
+    background-color: $accent;
+    color: $color_sub;
+    padding: $space_xl;
+    border-radius: $space_xl;
+    width: 100%;
+    font-size:$font-size_l;
+    @include mq() {
+    font-size:$font-size_s;
+  }
+  }

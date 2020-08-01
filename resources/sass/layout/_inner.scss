@@ -1,0 +1,75 @@
+.l-inner--wrapper {
+  padding: 120px 0;
+  &__m {
+    padding: 60px 0;
+      }
+  &__s {
+    padding: 30px 0;
+  }
+ }
+ .l-inner {
+  width: $site-width;
+  margin: 0  auto;
+  padding: $space_l;
+  @include mq() {
+    width: 100%;
+    box-sizing: border-box;
+   }
+  @include md(md) {
+    width: 100%;
+    box-sizing: border-box;
+    text-aling:center;
+  }
+   &__l {
+     width: $site-width;
+     margin: 0  auto;
+     padding: $space_l;
+     @include mq() {
+      width: 100%;
+      box-sizing: border-box;
+     }
+    @include md(md) {
+    width: 100%;
+    box-sizing: border-box;
+  }
+   }
+  &__m {
+    width: 768px;
+    margin: 0  auto;
+    padding: $space_l;
+    @include mq() {
+      width: 100%;
+      box-sizing: border-box;
+     }
+    @include md(md) {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  }
+  &__s {
+    width: 414px;
+    margin: 0  auto;
+    padding: $space_l;
+  @include mq() {
+      width: 50%;
+      box-sizing: border-box;
+     }
+ @include ss(ss) {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  }
+  &__ss {
+    width: 200px;
+    margin: 0  auto;
+    padding: $space_l;
+    @include mq() {
+      width: 100%;
+      box-sizing: border-box;
+     }
+    @include md(md) {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  }
+}

@@ -1,0 +1,37 @@
+
+.c-text {
+  height: 40px;
+  background-color: $font-color_sub;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 23px;
+  border-radius: 2px;
+  border: 1px solid #cccccc;
+  font-size: 15px;
+  }
+  
+
+  .c-file {
+    height: 200px;
+    background-color: $font-color_sub;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 23px;
+    border-radius: 2px;
+    border: 1px solid #cccccc;
+    font-size: 15px;
+    opacity: 0;
+
+  }
+.p-form--item__file {
+  margin: auto;
+  height: 200px;
+  background-color: $font-color_sub;
+  width: 50%;
+  box-sizing: border-box;
+  margin-bottom: 23px;
+  border-radius: 2px;
+  border: 1px solid #cccccc;
+  font-size: 15px;
+}
+  

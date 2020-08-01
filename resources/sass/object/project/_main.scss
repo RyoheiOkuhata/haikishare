@@ -1,0 +1,14 @@
+.p-main {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  margin-top: $space_3l;
+  &--item {
+      width: 40%;
+      @include mq() {
+      width: 100%;
+      margin-top: $space_xl;
+       }
+  }
+}
+

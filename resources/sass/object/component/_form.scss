@@ -1,0 +1,37 @@
+.c-text {
+  height: $space_3l;
+  width: 100%;
+  border-radius: 100px;
+  box-sizing: border-box;
+  border-radius: $space_m;
+  border: 1px solid $base-color;
+  font-size: $font-size_m;
+  margin: auto;
+  }
+.c-text--price {
+  height: $space_3l;
+    width: 95%;
+    border-radius: 100px;
+    box-sizing: border-box;
+    border-radius: $space_m;
+    border: 1px solid $base-color;
+    font-size: $space_l;
+    margin: auto;
+  @include mq() {
+    width: 85%;
+      }
+    }
+.c-file {
+    height: 200px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: $space_xl;
+    border-radius: 2px;
+    border: 1px solid #cccccc;
+    font-size: $font-size_default;
+    opacity: 0;
+  &--title {
+  font-size: $font-size_xl;
+  margin-bottom: $space_xl;
+}
+  }

@@ -1,0 +1,30 @@
+.p-form__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.p-login-bg{
+  background-image: url("../img/login.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  color: $font-color_default;
+  @include mq() {
+    padding: 1.5rem;
+  }
+}
+
+.p-login-color {
+    color: $font-color_default;
+    background-color:$font-color_sub;
+    opacity: 1;/*半透明カラーの透明度*/
+  }
+  .p-form__login {
+    color: $font-color_default;
+    opacity: 1;/*半透明カラーの透明度*/
+  }
+  
+  
+  

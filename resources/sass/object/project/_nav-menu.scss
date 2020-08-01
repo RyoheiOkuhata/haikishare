@@ -1,0 +1,172 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.p-logo {
+  font-family: $font-family_logo;
+}
+// ==============================
+// navigation
+// ==============================
+.p-header--nav{
+   display: none;
+    @include md(md) {
+  display: block;
+  background-color: #ffff;
+  position: fixed;
+  top: 0;
+  right:0;
+  height: 100vh;
+  width: 100vw;
+  padding: 60px 0 0 ;
+  z-index: 2;
+  //ここで隠している
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform .3s, opacity .3s;
+  &.active {
+    //transformを0.3秒かけながら0にしつつ、opacityも0.3秒かけながら1にする
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform .3s ,opacity .3s;
+    }
+  }
+  }
+  .p-nav {
+    display:none;
+    @include md(md) {
+     display:block;
+    background-color: $color_default;
+     text-align:center;
+  }
+  }
+  .p-nav--item  {
+    display:none;
+  @include md(md) {
+      display:block;
+      padding:$space_l 0px;
+      text-align:center;
+    border-top: 1px solid $base-color;
+       box-sizing: border-box;
+  }
+  }
+  .p-nav--link{
+    display:none;
+  @include md(md) {
+    color: $color_sub;
+   width:100%;
+     display:block;
+  }
+  }
+  .p-nav--title {
+    background: #ffff;
+  }
+
+
+
+
+// ==============================
+// burgerライン
+// ==============================
+  .bars-trigger { //todoリファクタ
+  display: none;
+  @include md(md) {
+  display: block;
+  width: 10%;
+  align-items: center;
+  z-index: 3; 
+  
+  .bar {
+  display: block;
+  background-color: #333;
+  border-radius: 1px;
+  height: 2px;
+  width: 22px;
+  &:nth-of-type(1) {
+    transform: translateY(-4px);
+    transition: transform .3s;
+  }
+  &:nth-of-type(3) {
+    transform: translateY(4px);
+    transition: transform .3s;
+    }
+  }
+  &.active .bar {
+  &:nth-of-type(1) {
+      transform: translateY(2px) rotate(30deg);
+      transition: transform .3s;
+    }
+    //2本め
+    &:nth-of-type(2) {
+      opacity: 0; //消す
+    }
+    //3本め
+    &:nth-of-type(3) {
+      transform: translateY(-2px) rotate(-30deg);
+      transition: transform .3s;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//--------------------------------
+//スライドダウン
+//--------------------------------
+.p-menu {
+  &--item {
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    color: $color_sub;
+     background-color: $color_default;
+    width: 150px;
+    margin-right: $space_m;
+    height: $space_xxl;
+    line-height: $space_xxl;
+    @include md(md) {
+      display: none;
+       }
+   }
+   &--list {
+    background-color: $color_default;
+    display: block;
+    color: $color_sub;
+    position: relative;
+    z-index: 100;
+    text-decoration: none; 
+    width: 100%;
+    box-sizing: border-box;
+ @include md(md) {
+      display: none;
+       }
+
+  }
+  .p-menu--list:hover {
+    opacity: 0.5;
+  }
+}
+.sub {
+  display: none;
+  position: absolute;
+  text-align: center; 
+}
+

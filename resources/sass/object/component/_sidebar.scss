@@ -1,0 +1,12 @@
+.c-sidebar{
+width: 100%;
+display: block;
+padding: $space_xl;
+transition: all  0.5s ease;
+}
+.c-sidebar:hover {
+  padding: $space_xl;
+  font-size: $font-size_default;
+  }
+
+

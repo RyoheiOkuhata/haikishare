@@ -1,0 +1,38 @@
+.p-mv {
+  background-image: url("../imges/mainvisual.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: cover; 
+  color: $color_default;
+  @include mq() {
+    width: 100%;
+    max-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+  &--ttl {
+    font-size: $font-size_3l;
+    position: absolute;
+    bottom: 300px;
+    right: 100px;
+    padding:$space_m  $space_xxl;
+    br {
+      display: none;
+      @include mq() {
+        display: block;
+      }
+    }
+    @include mq() {
+    font-size: $font-size_xxl;
+    text-align: center;
+    position: initial;
+     }
+    }
+}
+
+

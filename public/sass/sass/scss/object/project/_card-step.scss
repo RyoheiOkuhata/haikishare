@@ -1,0 +1,33 @@
+.p-card__item {
+  width: calc(25% - 15px);
+  text-align: center;
+  padding: 16px;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+  @include mq() {
+    width: 100%;
+    box-sizing: border-box;
+   }
+  &__step {
+    margin-bottom: 20px;
+    text-align: center;
+   }
+ &__txt {
+  margin-top: 20px;
+
+   }
+  }
+.p-card__txt {
+  margin-bottom: 20px;
+}
+
+  
+
+
+
+
+
+
+
+
+

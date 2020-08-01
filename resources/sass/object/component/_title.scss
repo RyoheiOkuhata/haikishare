@@ -1,0 +1,61 @@
+.c-main--title {
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+  text-align:center;
+  font-size:$font-size_xxl;
+  @include mq() {
+    font-size:$font-size_s;
+      }
+}
+.c-form--title {
+text-align: center;
+font-size: $font-size_l;
+padding: $space_xl 0;
+}
+.c-main--title:before, .c-main--title:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 2px;
+  background-color: $color_default;
+}
+.c-main--title__sub:before, .c-main--title__sub:after {
+  background-color:$color_sub;
+}
+
+.c-main--title:before {
+  left:0;
+}
+.c-main--title:after {
+  right: 0;
+}
+.c-card--title {
+  padding: $space_m;
+  background: #ffff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.23);
+  text-align:center;
+  font-size:$font-size_xxl;
+  color: $color_third;
+  margin-bottom:$space_m;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.c-inner--title {
+  padding: $space_m;
+  color: $color_default;
+  border-left: solid 5px $accent;
+  border-bottom: solid 3px $base-color;
+  font-size:$font-size_l;
+  margin:$space_m 0px;
+@include mq() {
+  font-size:$font-size_s;
+  }
+}
+.c-panel--title {
+  font-size: $font-size_xxl;
+}
+

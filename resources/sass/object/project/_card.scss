@@ -1,0 +1,31 @@
+.p-card--item {
+  width: calc(25% - 10px);
+  text-align: center;
+  height: 180px;
+  box-sizing: border-box;
+ border: solid 1px $color_default;
+  @include mq() {
+    width: 100%;
+    box-sizing: border-box;
+   }
+  &--step {
+    padding: $space_m;
+    text-align: center;
+   }
+ &--txt {
+    padding: $space_m;
+    font-size: $font-size_l;
+   }
+ &--img {
+     min-height: $space_xxl;
+ }
+  }
+.p-card--txt {
+  margin: $space_m 0; 
+    word-wrap: break-word;
+
+
+}
+
+
+

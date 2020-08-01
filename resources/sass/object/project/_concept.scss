@@ -1,0 +1,17 @@
+.p-concept {
+  color: $color_sub;
+  text-align: center;
+  &--txt {
+  text-align: center;
+  letter-spacing: 3px;
+    margin-bottom: $space_m;
+  @include mq() {
+  font-size: $font-size_s;
+   }
+  }
+&--title {
+  font-size: $font-size_xl;
+  text-align: center;
+  margin-bottom: $space_xxl;
+}
+}

@@ -1,0 +1,18 @@
+.l-footer {
+  height: 200px;
+  background-color: $color_default;
+  color: $base-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+    width: 100%;
+ &--txt {
+    padding: 20px;
+  @include mq() {
+  padding: 0px 5px;
+  font-size: 10px;
+  width: 100%;
+   }
+  }
+}

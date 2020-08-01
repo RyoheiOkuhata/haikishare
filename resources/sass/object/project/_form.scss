@@ -1,0 +1,56 @@
+.img-preview {
+    position: absolute;
+    top:0px;
+    left:0px;
+  @include mq() {
+    height: 100%;
+  }
+}
+.p-form--item__file {
+  margin: auto;
+  height: 200px;
+  width: 50%;
+  box-sizing: border-box;
+  margin-bottom: $space_xl;
+  border-radius: 2px;
+  border: 1px solid #cccccc;
+  font-size: $font-size_default;
+  overflow:hidden;
+  position: relative;
+  @include mq() {
+  height: 160px;
+  width: 100%;
+  }
+  .p-form-text {
+    color:$color_default;
+    }
+}
+.p-select {
+  border-radius: $space_m;
+}
+.p-form--item {
+  margin-bottom: $space_xxl;
+  padding: 0px $space_s;
+  color:$color_default;
+  text-align: center;
+  @include mq() {
+  margin-bottom:$space_m;
+  }
+  }
+.p-form--list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.p-validate {
+@include ss(ss) {
+    font-size: $font-size_s;
+ }
+}
+
+
+
+
+
+
+

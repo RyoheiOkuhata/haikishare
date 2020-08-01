@@ -1,0 +1,54 @@
+.l-inner-wrapper {
+  padding: 120px 0;
+  &__m {
+    padding: 60px 0;
+      }
+  &__s {
+    padding: 30px 0;
+  }
+ }
+
+ .l-inner {
+  width: $site-width;
+  margin: 0  auto;
+  padding: 0 1.5rem;
+  @include mq() {
+    width: 100%;
+    box-sizing: border-box;
+   }
+   &__l {
+     width: 1200px;
+     margin: 0  auto;
+     padding: 0 1.5rem;
+     @include mq() {
+      width: 100%;
+      box-sizing: border-box;
+     }
+   }
+  &__m {
+    width: 720px;
+    margin: 0  auto;
+    padding: 0 1.5rem;
+    @include mq() {
+      width: 100%;
+      box-sizing: border-box;
+     }
+  }
+  &__s {
+    width: 420px;
+    margin: 0  auto;
+    padding: 0 1.5rem;
+    @include mq() {
+      width: 100%;
+      box-sizing: border-box;
+     }
+  }
+} 
+
+.p-inner__body--mypage {
+  color: #333;
+  text-align: left;
+}
+
+
+

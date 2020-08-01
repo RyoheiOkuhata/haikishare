@@ -1,0 +1,38 @@
+.invalid-feedback {
+  color:#FF8856;
+  @include ss(ss) {
+    font-size:$font-size_s;
+   }
+}
+.flash_message {
+    background-color:#00bfff;
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 150px;
+    border-radius:$space_m;
+    font-size:$font-size_l;
+  @include ss(ss) {
+    padding: 5px 0px;
+    font-size:$font-size_s;
+    top: 1%;
+    width:100%;
+    text-align:center;
+    border-radius:0px;
+   }
+}
+.flash_meg--txt {
+   color:$color_sub;
+}
+.flash_message--success {
+  color:#00bfff;
+}
+.flash_message--failure {
+  color:#FF8856;
+}
+.is-invalid  {
+  border: 2px solid #FF8856;
+}
+
+

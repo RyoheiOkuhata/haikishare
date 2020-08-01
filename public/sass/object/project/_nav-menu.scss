@@ -1,0 +1,159 @@
+
+
+// ==============================
+// navigation
+// ==============================
+.c-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.header-nav {
+  background: rgba(255, 255, 255, 0.85);
+  position: fixed;
+  top: 0;
+  right:0;
+  height: 100vh;
+  width: 36.1vw;
+  padding: 120px 0 0 ;
+  z-index: 2;
+  //ここで隠している
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform .3s, opacity .3s;
+
+ .p-nav {
+    &-item {
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 32px;
+    }
+    &-link {
+      display: block;
+      text-align: center;
+      font-size: 16px;
+    }
+    &-img {
+      max-width: 45px;
+      height: auto;
+      margin: auto;
+    }
+    }
+    &.active {
+      //transformを0.3かけながら0にしつつ、opacityも0.3秒かけながら1にする
+      transform: translateX(0);
+      opacity: 1;
+      transition: transform 3s opacity 3s;
+    }
+
+    @include mq() {
+      width: 100%;
+    }
+}
+
+
+
+// ==============================
+// burger
+// ==============================
+.bars-triggre { //todoリファクタ
+  display: none;
+
+  @include mq() {
+    display: block;
+  width: 10%;
+  align-items: center;
+  z-index: 3; 
+
+.bar {
+  display: block;
+  background-color: #333;
+  border-radius: 1px;
+  height: 2px;
+  width: 22px;
+  &:nth-of-type(1) {
+    transform: translateY(-4px);
+    transition: transform 3s;
+  }
+  &:nth-of-type(3) {
+    transform: translateY(4px);
+    transition: transform 3s;
+  }
+}
+
+  &.active span {
+
+    &:nth-of-type(1) {
+      transform: translateY(2px) rotate(30deg);
+      transition: transform 3s;
+    }
+    //2本め
+    &:nth-of-type(2) {
+      opacity: 0; //消す
+    }
+    //3本め
+    &:nth-of-type(3) {
+      transform: translateY(-2px) rotate(-30deg);
+      transition: transform 3s;
+
+    }
+  }
+
+}
+}
+
+
+
+
+
+//--------------------------------
+//スライドダウン
+//--------------------------------
+.p-menu {
+
+  &__item {
+    float: left;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    color: $font-color_sub;
+     background-color: #f5bf1e;;
+    width: 150px;
+    margin-right: $space_m;
+    height: $space_xxl;
+    line-height: $space_xxl;
+    @include md(md) {
+      display: none;
+       }
+   }
+   &__list {
+    background-color: $font-color_sub;
+    display: block;
+    color: $font-color_default;
+    position: relative;
+    z-index: 2;
+    text-decoration: none; 
+    width: 100%;
+
+    box-sizing: border-box;
+    @include md(md) {
+      display: none;
+       }
+
+  }
+  .p-menu__list:hover {
+    opacity: 0.5;
+  }
+}
+.sub {
+  display: none;
+  position: absolute;
+  text-align: center; 
+}
+
+
+
+
+

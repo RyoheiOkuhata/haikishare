@@ -1,0 +1,14 @@
+.c-header {  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0px $space_3l ;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  @include mq() {
+  }
+}
+
+

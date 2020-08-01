@@ -1,0 +1,63 @@
+$color_default:#635f5a;;
+$color_sub: #FFFFFF; 
+$color_third:#606060;
+
+
+$base-color: #efedeb;
+
+$accent: #f5bf1e;
+$accent_font_color:#dbb34d;
+$accent_sub: #ffaa4e;
+
+
+
+
+$site-width: 1025px;
+
+$font-size_s: 12px;
+$font-size_m: 14px;
+$font-size_default: 16px;
+$font-size_l: 18px;
+$font-size_xl: 24px;
+$font-size_xxl: 30px;
+$font-size_3l: 38px;
+
+
+$space_s: 5px;
+$space_m: 10px;
+$space_l: 15px;
+$space_xl: 20px;
+$space_xxl: 30px;
+$space_3l: 40px;
+
+$font-family_logo: 'Amatic SC', cursive;
+
+
+
+
+
+$breakpoints: (
+  'ss': 'screen and (max-width: 414px)',
+  'sm': 'screen and (max-width: 768px)',
+  'md': 'screen and (max-width: 1025px)',
+  'lg': 'screen and (max-width: 1200px)',
+) !default;
+
+
+@mixin ss($breakpoint: ss) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq($breakpoint: sm) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin md($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

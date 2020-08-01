@@ -1,0 +1,63 @@
+.p-card--article  {
+  width: calc(20% - 15px);
+  text-align: center;
+  padding: 15px;
+  box-sizing: border-box;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+  height:250px;
+  position: relative;
+  margin-right:15px;
+  @include mq() {
+    width: 33.333%;
+    box-sizing: border-box;
+    margin-right:0px;
+    height:200px;
+   }
+  @include ss(ss) {
+    width: 33.333%;
+    padding: 0px;
+    box-sizing: border-box;
+    margin-right:0px;
+   }
+ &__txt {
+  margin: 5px 0px;
+  color: $color_third;
+  font-size: $font-size_l;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+  @include md(md) {
+  font-size: $font-size_s;
+   }
+   }
+   &__link {
+   color: $accent;
+   border: solid 1px $accent;
+  @include md(md) {
+    font-size: $font-size_s;
+   }
+  }
+  img {
+    height:100%;
+  }
+  &__img {
+      height:80px;
+  }
+  }
+
+
+
+
+  .p-required {
+      background: #FF8856;
+      color: #ffff;
+      text-align: center;
+      padding: 2px ;
+  }
+.p-required--wrap  {
+    text-align: center;
+    display: inline;
+    font-size: 12px;
+
+}

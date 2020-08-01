@@ -1,0 +1,9 @@
+.c-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 200px;
+  background-color: $font-color_sub;
+  color: $font-color_default;
+  padding: 0 1.5rem;
+}

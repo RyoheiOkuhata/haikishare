@@ -1,0 +1,56 @@
+.p-label-content {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 89px;
+  height: 91px;
+  overflow: hidden;
+  }
+.p-label {
+  display: inline-block;
+  position: absolute;
+  padding: 7px 0;
+  left: -23px;
+  top: 22px;
+  width: 160px;
+  text-align: center;
+  font-size: $font-size_l;
+  line-height: $space_l;
+  background: #ffa520;
+  color: $color_sub;
+  letter-spacing: 0.05em;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+  @include ss(ss) {
+    left: -15px;
+    top: 15px;
+    font-size:$font-size_s;
+      padding:0px;
+   }
+
+}
+.p-label:before, .p-label:after {
+  position: absolute;
+  content: "";
+  border-top: 4px solid #b2751b;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  bottom: -4px;
+}
+.p-label:before {
+  left: 14px;
+}
+.p-label:after {
+  right: 18px;
+}
+
+
+
+
+
+
+
+
+

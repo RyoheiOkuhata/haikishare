@@ -1,0 +1,72 @@
+html{
+  font-size: 62.5%;
+  /*=10px */
+ }
+ body{
+  line-height: 1.5;
+   font-size: 1.6rem;
+    /*16px */
+   letter-spacing: 0.5em;
+    /*50px */
+   font-family: Raleway, 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;;
+   color: $font-color_default;
+   box-sizing: border-box;
+ }
+ img{
+   vertical-align: bottom;
+   width: 100%;//親に対してmax-widthつける
+ }
+
+ ul {
+  list-style: none;
+}
+li {
+  list-style: none;
+}
+
+ a {
+   text-decoration: none;
+   transition: .3s;
+   color: $font-color_default;
+ }
+ a:hover {
+  transition: .3s;//aタグのhoverはだいたいこれ
+  opacity: .7;
+}
+
+button :hover {
+  transition: .3s;
+  opacity: .7;
+  cursor: pointer;
+}
+input {
+  box-sizing: border-box;
+}
+input,textarea {
+  resize: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  width: 100%;
+  }
+  select {
+  resize: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  }
+  
+  p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+ margin-inline-start: 0px;
+  margin-inline-end: 0px;
+      letter-spacing: 0.5px;
+      font-size: 16px;
+      
+  }
+  
+  

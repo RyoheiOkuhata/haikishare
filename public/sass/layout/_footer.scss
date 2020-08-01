@@ -1,0 +1,11 @@
+.l-footer {
+  height: 100px;
+  background-color:$font-color_default;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &--txt {
+    color: $font-color_sub;
+    padding: 20px;
+  }
+}

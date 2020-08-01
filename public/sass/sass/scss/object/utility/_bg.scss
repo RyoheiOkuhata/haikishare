@@ -1,0 +1,37 @@
+
+.u-bg{
+  background-color: $base-color;
+}
+.u-bg__sub {
+  background:$base-color_sub;
+}
+.u-bg__third {
+  background: $base-color_third;
+}
+.u-accent {
+  background: $base-color_accent;
+}
+.u-accent__sub {
+  background:$base-color_accent_sub;
+}
+
+.u-card__bg {
+ background: $font-color_sub;
+ box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4);
+}
+
+.s {
+  text-align: center;
+  vertical-align:center;
+  width: 100px;
+}
+
+
+.a {
+  background-color: #f5bf1e;
+}  
+
+
+
+
+

@@ -1,0 +1,13 @@
+.main-wrap{
+  overflow: hidden;
+}
+.main{
+  text-align: center;
+  color: #fff;
+  width: 80%;
+  float: left;
+@include md(md) {
+width: 100%;
+    box-sizing: border-box;
+      }
+}

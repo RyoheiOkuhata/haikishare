@@ -1,0 +1,38 @@
+.p-image__round {
+  width: $space_3l;
+  height: $space_3l;
+  border-radius: 50%;
+}
+.p-profile--body {
+  display: flex;
+  align-items: center;
+  margin-right: $space_xl;
+  @include mq() {
+  display:block;
+  }
+}
+.p-profile--name {
+  margin: 0px $space_xl;
+  br {
+    display:none;
+  }
+  @include mq() {
+  font-size:$font-size_s;
+  margin: 0px;
+  word-wrap: break-word;
+  display:block;
+  text-align:center;
+  padding:$space_m;
+  display:block;
+  }
+}
+
+
+
+
+
+
+
+
+
+

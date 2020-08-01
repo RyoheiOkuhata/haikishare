@@ -1,0 +1,10 @@
+.c-btn {
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+  border: none;
+    @include mq() {
+    padding: 10px;
+    font-size:10px;
+   }
+}

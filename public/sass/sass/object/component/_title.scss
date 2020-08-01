@@ -1,0 +1,16 @@
+.c-inner__title {
+  font-size: 3.2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  br {
+    display: none;
+    @include mq() {
+    display: block;
+         }
+  }
+  @include mq() {
+font-size: 20px;
+display: block;
+   }
+  }

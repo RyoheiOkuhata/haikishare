@@ -1,0 +1,18 @@
+.p-concept__title {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.p-concept {
+  text-align: center;
+}
+
+.p-concept__txt {
+  @include mq() {
+font-size: 12px;
+text-justify: inter-ideograph;
+text-align: justify;
+   }
+
+}

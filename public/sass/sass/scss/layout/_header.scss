@@ -1,0 +1,51 @@
+.l-header {
+  background: rgba(255, 255, 255, 0.85);
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
+
+.main-wrap{
+  overflow: hidden;
+}
+.main{
+  height: 100%;
+  text-align: center;
+  color: #fff;
+  width: 80%;
+  float: left;
+  @include mq() {
+width: 100%;
+      }
+}
+.sidebar{
+  background-color: #f5bf1e;
+  min-height: 600px;
+  text-align: center;
+  color: #fff;
+  width: 20%;
+  float: left;
+  @include mq() {
+    display: none;
+      }
+}
+
+
+.p-sidebar {
+width: 100%;
+display: block;
+padding: 20px;
+box-sizing: border-box;
+color: #fff;
+}
+
+
+
+
+

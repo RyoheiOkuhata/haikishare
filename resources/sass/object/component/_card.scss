@@ -1,0 +1,15 @@
+.c-card--list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  @include mq() {
+    display: block;
+   }
+}
+.c-card--list__flex {
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+}
+
