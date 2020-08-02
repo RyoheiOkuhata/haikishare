@@ -4,8 +4,6 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
-
-use App\Http\ViewComposers\UserComposer;
 use App\Http\ViewComposers\ProfileImgComposer;
 use App\Http\ViewComposers\BuyerProfileImgComposer;
 

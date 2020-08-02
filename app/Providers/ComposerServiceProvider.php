@@ -31,7 +31,6 @@ class ComposerServiceProvider extends ServiceProvider
     {
         View::composers([
             UserComposer::class    => 'layouts.*',
-
         ]);
     }
 }
