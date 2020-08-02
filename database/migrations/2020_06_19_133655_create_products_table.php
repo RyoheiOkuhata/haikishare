@@ -25,7 +25,7 @@ class CreateProductsTable extends Migration
             $table->timestamps();
         });
     }
- 
+
     /**
      * Reverse the migrations.
      *
@@ -34,7 +34,6 @@ class CreateProductsTable extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            // 外部キー付きのカラムを削除するにはまず必ず外部キー制約を外す必要があります
             $table->dropForeign(['user_id']);
             $table->dropColumn('user_id');
         });
