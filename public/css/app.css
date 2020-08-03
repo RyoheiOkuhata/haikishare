@@ -243,12 +243,13 @@ textarea {
 }
 
 select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   cursor: -webkit-grab;
   cursor: grab;
   resize: none;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   outline: none;
   border: none;
   width: 95%;
