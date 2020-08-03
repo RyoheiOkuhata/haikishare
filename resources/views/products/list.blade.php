@@ -14,6 +14,6 @@
                 </h2>
             </a>
             <p class="p-card--gallery__under">
-                  {{$product->user->shop_name}}
+
            </p>
 </li>

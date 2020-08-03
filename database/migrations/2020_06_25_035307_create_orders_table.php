@@ -15,11 +15,14 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('buyer_id');
+            $table->bigInteger('buyer_id')->unsigned();
+            $table->bigInteger('product_id')->unsigned();
+
             $table->foreign('buyer_id')->references('id')->on('buyers')->onDelete('cascade');
-            $table->bigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+
             $table->timestamps();
+
         });
     }
 
@@ -30,6 +33,15 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
+        Schema::table('orders', function (Blueprint $table) {
+            $table->dropForeign(['buyer_id']);
+            $table->dropColumn('buyer_id');
+            $table->dropForeign(['product_id']);
+            $table->dropColumn('product_id');
+        });
+
         Schema::dropIfExists('orders');
+
+
     }
 }

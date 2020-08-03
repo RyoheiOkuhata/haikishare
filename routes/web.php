@@ -1,5 +1,6 @@
 <?php
 Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/welcome', function () {return view('welcome');});
 

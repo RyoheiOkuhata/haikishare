@@ -78,7 +78,7 @@
                     </span>
                 @enderror
                     <li class="p-form--item">
-                        <input id="password" type="text" class="c-text @error('password') is-invalid @enderror" name="password" required autocomplete="new-password"  placeholder="パスワード">
+                        <input id="password" type="password" class="c-text @error('password') is-invalid @enderror" name="password" required autocomplete="new-password"  placeholder="パスワード">
                         <label for="" class="">
                       <label class="p-validate">
                         ※半角英数字組み合わせで8文字以上
@@ -86,7 +86,7 @@
                     </li>
 
                     <li class="p-form--item">
-                        <input id="password-confirm" type="text" class="c-text" name="password_confirmation"  required autocomplete="new-password"  placeholder="パスワード確認" >
+                        <input id="password-confirm" type="password" class="c-text" name="password_confirmation"  required autocomplete="new-password"  placeholder="パスワード確認" >
                         <label for="" class="">
                     </li>
                   </ul>
