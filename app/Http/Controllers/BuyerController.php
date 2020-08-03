@@ -54,7 +54,7 @@ public function update(Request $request,int $id) {
 
     if(!empty($request->img)) {
         Storage::delete('public/buyerProfile_images', $buyer->id . '.jpg');
-        $buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg');
+        $buyer->img = base64_encode ($request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg'));
         }
     return back()->with('flash_message', '編集が完了しました');
 }
