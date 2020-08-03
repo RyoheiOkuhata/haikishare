@@ -1,17 +1,1 @@
-.l-sidebar{
-  min-height: 600px;
-  text-align: center;
-  margin-top:$space_xxl;
-  color: $color_sub;
-  width: 20%;
-  float: left;
-  box-sizing: border-box;
-  &--list {
-      border-top: 1px solid $base-color;
-  }
-  @include md(md) {
-    display: none;
-      }
-}
-
 
