@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('branch_name');
             $table->string('prefecture');
             $table->string('address');
-            $table->string('email')->unique();
+            $table->string('email', 191)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('img')->nullable();
