@@ -9,10 +9,10 @@ use App\Notifications\PasswordResetNotification;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Contracts\Auth\MustVerifyEmail as MustVerifyEmailContract;
 
 
-class User extends Authenticatable implements MustVerifyEmailContract {  
+
+class User extends Authenticatable  {  
 
     use MustVerifyEmail, Notifiable;  //MustVerifyEmailを追加
 
