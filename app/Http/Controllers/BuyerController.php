@@ -52,10 +52,19 @@ public function update(Request $request,int $id) {
     $buyer = Buyer::where('id', $id)->first();
     $buyer->buyer_name = $request->buyer_name;
 
+  //  if(!empty($request->img)) {
+    //    Storage::delete('public/buyerProfile_images', $buyer->id . '.jpg');
+      //  $buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg');
+      //  }
+
     if(!empty($request->img)) {
-        Storage::delete('public/buyerProfile_images', $buyer->id . '.jpg');
-        $buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg');
-        }
+        file_get_contents($request->img->getRealPath());
+        $image_binary = base64_encode(file_get_contents($request->image->getRealPath()));
+   }
+      $buyer->buyer_name = $image_binary;
+      
+
+
     return back()->with('flash_message', '編集が完了しました');
 }
 
