@@ -57,10 +57,11 @@ public function update(Request $request,int $id) {
       //  $buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg');
       //  }
 
+ 
       $image_binary = base64_encode($buyer->id .'.jpg');
       $buyer->img = $image_binary;
+     $buyer->save();
 
-    $buyer->save();
     return back()->with('flash_message', '編集が完了しました');
 }
 
