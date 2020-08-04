@@ -24,18 +24,7 @@ use App\Http\Requests\ProductRequest;
 use Request as PostRequest;
 
 class UserController extends Controller {
-//----------------------------------------
-//ユーザープロフィール画像
-//---------------------------------------
-public function ajaxImg(int $id){
-    $user = User::where('id', $id)->first();
-    $product = $user->products;
-    $is_img = $this->isImg();
-    return [
-        'product' => $product,
-        'is_img'=> $is_img,
-        ];
-}
+
 //----------------------------------------
 //ユーザープロフィール画像のチェック
 //---------------------------------------
@@ -93,7 +82,7 @@ public function ajaxImg(int $id){
     public function soldProduct($id) {
         $user = User::where('id', $id)->first();
         //ユーザー情報
-        $soldOutProducts = $user->soldProduct;
+        $soldOutProducts = $user->soldProduct()->paginate(10);
         //hasmanythroughでusers->products->ordersテーブルにアクセス。
         //ユーザーが出品した商品で売れたものをとる
 
