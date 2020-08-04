@@ -59,7 +59,10 @@ public function update(Request $request,int $id) {
 
     if(!empty($request->img)) {
 
-        $buyer->buyer_name = base64_encode(file_get_contents($request->buyer_name));
+    $buyer->buyer_name = base64_encode(file_get_contents($request->img));
+    
+));
+      
    }
 
 
