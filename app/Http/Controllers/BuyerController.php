@@ -42,7 +42,7 @@ public function show(int $id) {
     }
 
 //----------------------------------------
-//バイヤーのマイページ
+//プロフィール更新
 //----------------------------------------
 public function update(Request $request,int $id) {
         $request->validate([
@@ -54,14 +54,14 @@ public function update(Request $request,int $id) {
 
     if(!empty($request->img)) {
         Storage::delete('public/buyerProfile_images', $buyer->id . '.jpg');
-        $buyer->img = base64_encode ($request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg'));
+        $buyer->img = ($request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg');
         }
     return back()->with('flash_message', '編集が完了しました');
 }
 
-    //----------------------------------------
-    //メールアドレスリセット
-    //---------------------------------------
+//----------------------------------------
+//メールアドレスリセット
+//---------------------------------------
     public function emailReset(int $id){
         $buyer = Buyer::where('id', $id)->first();
         Log::debug(print_r( $buyer, true));
@@ -69,9 +69,9 @@ public function update(Request $request,int $id) {
             'buyer_info' => $buyer,
           ]);
     }
-    //----------------------------------------
-  //メールアドレスリセット
-    //---------------------------------------
+//----------------------------------------
+//メールアドレスリセット
+//---------------------------------------
     public function emailUpdate(Request $request,int $id){
         $buyer = Buyer::where('id', $id)->first();
         $request->validate([
@@ -109,8 +109,7 @@ public function update(Request $request,int $id) {
 //----------------------------------------
   //メールアドレスリセット完了
 //---------------------------------------
-    public function Reset(Request $request, $token)
-    {
+    public function Reset(Request $request, $token){
         $email_resets = DB::table('email_resets')
             ->where('token', $token)
             ->first();
@@ -140,12 +139,10 @@ public function update(Request $request,int $id) {
 
         }
     }
-
     //----------------------------------------
     // トークンが有効期限切れかどうかチェック
     //---------------------------------------
-    protected function tokenExpired($createdAt)
-    {
+    protected function tokenExpired($createdAt){
         // トークンの有効期限は60分に設定
         $expires = 60 * 60;
         return Carbon::parse($createdAt)->addSeconds($expires)->isPast();
@@ -159,7 +156,8 @@ public function update(Request $request,int $id) {
     }
 
     public function passwordUpdate(Request $request,int $id)
-    {
+{
+
         $user = Buyer::where('id', $id)->first();
         //現在のパスワードが正しいかを調べる
         if (!(Hash::check($request->get('current-password'), $user->password))) {
