@@ -57,7 +57,11 @@ public function update(Request $request,int $id) {
       //  $buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg');
       //  }
 
-        $file = $buyer->id."jpg";
+
+
+        $file = $request->img;
+        Log::debug(print_r( $file , true));
+
     
 
         // s3のuploadsファイルに追加
