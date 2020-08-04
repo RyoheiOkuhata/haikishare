@@ -51,9 +51,12 @@ export default {
       imageData:'',
       buyerid : this.Idbuyer,
       buyerSrc:'data:image/png;base64,'+ this.Idbuyer + '.jpg',
+      buyerSrc:'{{ Storage::disk('s3')->url()}}',
+
       edit:true,//エディットモード
       }
     },
+  
 methods: {
 //------------------------------
 //画像リセット

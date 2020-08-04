@@ -57,12 +57,11 @@ public function update(Request $request,int $id) {
       //  $buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg');
       //  }
 
-    if(!empty($request->img)) {
-      $img = base64_encode(file_get_contents($request->img->getRealPath()));
-        //base64エンコードしたバイナリデータを格納
-        $buyer->buyer_name = $img;
-    }
+// s3のuploadsファイルに追加
+    $path = Storage::disk('s3')->put('/buyerProfile_images',$buyer->id .'.jpg');
+    $buyer->img =  $path;
 
+    $buyer->save();
     return back()->with('flash_message', '編集が完了しました');
 }
 
