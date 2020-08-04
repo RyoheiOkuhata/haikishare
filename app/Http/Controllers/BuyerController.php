@@ -54,8 +54,15 @@ public function update(Request $request,int $id) {
 
   if(!empty($request->img)) {
        Storage::delete('public/buyerProfile_images', $buyer->id . '.jpg');
+
        $buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg', 's3');
+
      }
+
+
+    $file = $request->img;
+   $path = Storage::disk('s3')->putFileAs('/', $file, '.jpg', 'public');
+   $buyer->img= $path;
 
 
 
@@ -69,7 +76,7 @@ public function update(Request $request,int $id) {
   //  $path =   Storage::disk('s3')->put($file->hashName(), $fileContents, 'public');
 
     
-     //   $buyer->img= $path;
+     //   
 
          $buyer->save();
 
