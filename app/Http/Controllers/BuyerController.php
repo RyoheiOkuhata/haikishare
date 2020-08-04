@@ -56,9 +56,13 @@ public function update(Request $request,int $id) {
     //    Storage::delete('public/buyerProfile_images', $buyer->id . '.jpg');
       //  $buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg');
       //  }
-      $image_binary = base64_encode(file_get_contents($request->img->getRealPath()));
-      $buyer->img = $image_binary;
-     $buyer->save();
+
+        $file = $buyer->id . '.jpg',
+        // s3のuploadsファイルに追加
+        $path = Storage::disk('s3')->put('buyerProfile_images',$file, 'public');
+        $buyer->buyer_name= $path;
+        
+         $buyer->save();
 
     return back()->with('flash_message', '編集が完了しました');
 }
