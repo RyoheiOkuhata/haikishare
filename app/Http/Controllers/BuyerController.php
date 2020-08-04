@@ -58,11 +58,11 @@ public function update(Request $request,int $id) {
       //  }
 
     if(!empty($request->img)) {
-        file_get_contents($request->img->getRealPath());
-        $image_binary = base64_encode(file_get_contents($request->image->getRealPath()));
+
+        $buyer->buyer_name = base64_encode(file_get_contents($request->image));
    }
-      $buyer->buyer_name = $image_binary;
-      
+
+
 
 
     return back()->with('flash_message', '編集が完了しました');
