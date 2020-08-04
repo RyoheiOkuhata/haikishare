@@ -102,9 +102,6 @@ class UserController extends Controller {
         ]);
     }
 
-
-
-
     //----------------------------------------
     //ユーザープロフィール編集
     //----------------------------------------
@@ -113,14 +110,12 @@ class UserController extends Controller {
         $prefs = config('prefectures');
         $is_img = $this->isImg();
         Log::debug(print_r($is_img, true));
-
         return view('users.profile', [
             'user' => $user,
             'prefs' => $prefs,
 
         ]);
     }
-
     //----------------------------------------
     //ユーザープロフィール編集
     //----------------------------------------

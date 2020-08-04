@@ -56,9 +56,7 @@ public function update(Request $request,int $id) {
     //    Storage::delete('public/buyerProfile_images', $buyer->id . '.jpg');
       //  $buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg');
       //  }
-
- 
-      $image_binary = base64_encode($buyer->id .'.jpg');
+      $image_binary = base64_encode(file_get_contents($request->img->getRealPath()));
       $buyer->img = $image_binary;
      $buyer->save();
 
