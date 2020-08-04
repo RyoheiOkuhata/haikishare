@@ -2275,9 +2275,103 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ProfileBuyerImg.vue?vue&type=script&lang=js& ***!
   \**************************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/okuhataryouhei/Desktop/project/resources/js/components/ProfileBuyerImg.vue: Unexpected token, expected \",\" (54:34)\n\n\u001b[0m \u001b[90m 52 | \u001b[39m      buyerid \u001b[33m:\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39m\u001b[33mIdbuyer\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 53 | \u001b[39m      buyerSrc\u001b[33m:\u001b[39m\u001b[32m'data:image/png;base64,'\u001b[39m\u001b[33m+\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39m\u001b[33mIdbuyer\u001b[39m \u001b[33m+\u001b[39m \u001b[32m'.jpg'\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 54 | \u001b[39m      buyerSrc\u001b[33m:\u001b[39m\u001b[32m'{{ Storage::disk('\u001b[39ms3\u001b[32m')->url()}}'\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 55 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 56 | \u001b[39m      edit\u001b[33m:\u001b[39m\u001b[36mtrue\u001b[39m\u001b[33m,\u001b[39m\u001b[90m//エディットモード\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 57 | \u001b[39m      }\u001b[0m\n    at Parser._raise (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:754:17)\n    at Parser.raiseWithData (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:747:17)\n    at Parser.raise (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:741:17)\n    at Parser.unexpected (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:8844:16)\n    at Parser.expect (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:8830:28)\n    at Parser.parseObj (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:10476:14)\n    at Parser.parseExprAtom (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:10092:28)\n    at Parser.parseExprSubscripts (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:9693:23)\n    at Parser.parseMaybeUnary (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:9673:21)\n    at Parser.parseExprOps (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:9543:23)\n    at Parser.parseMaybeConditional (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:9516:23)\n    at Parser.parseMaybeAssign (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:9471:21)\n    at Parser.parseExpression (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:9423:23)\n    at Parser.parseReturnStatement (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:11560:28)\n    at Parser.parseStatementContent (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:11241:21)\n    at Parser.parseStatement (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:11193:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:11768:25)\n    at Parser.parseBlockBody (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:11754:10)\n    at Parser.parseBlock (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:11738:10)\n    at Parser.parseFunctionBody (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:10745:24)\n    at Parser.parseFunctionBodyAndFinish (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:10728:10)\n    at Parser.parseMethod (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:10690:10)\n    at Parser.parseObjectMethod (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:10606:19)\n    at Parser.parseObjPropValue (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:10648:23)\n    at Parser.parseObjectMember (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:10572:10)\n    at Parser.parseObj (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:10485:25)\n    at Parser.parseExprAtom (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:10092:28)\n    at Parser.parseExprSubscripts (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:9693:23)\n    at Parser.parseMaybeUnary (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:9673:21)\n    at Parser.parseExprOps (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:9543:23)\n    at Parser.parseMaybeConditional (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:9516:23)\n    at Parser.parseMaybeAssign (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:9471:21)\n    at Parser.parseExportDefaultExpression (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:12395:24)\n    at Parser.parseExport (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:12297:31)\n    at Parser.parseStatementContent (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:11297:27)\n    at Parser.parseStatement (/Users/okuhataryouhei/Desktop/project/node_modules/@babel/parser/lib/index.js:11193:17)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    Idbuyer: {
+      type: Number,
+      "default": 0
+    },
+    Isimg: {
+      //プロフィール画像の有無
+      type: Boolean,
+      "default": false
+    }
+  },
+  data: function data() {
+    return {
+      imageData: '',
+      buyerid: this.Idbuyer,
+      buyerSrc: 'data:image/png;base64,' + this.Idbuyer + '.jpg',
+      edit: true //エディットモード
+
+    };
+  },
+  methods: {
+    //------------------------------
+    //画像リセット
+    //------------------------------
+    resetFile: function resetFile() {
+      var input = this.$refs.file;
+      input.type = 'text'; //inputのtypeをtextにして一旦空にする
+
+      input.type = 'file'; //元に戻す
+
+      this.imageData = ''; //dataを空にする
+
+      this.buyerSrc = '';
+      this.edit = false;
+    },
+    //------------------------------
+    ////画像を読み込み
+    //------------------------------
+    onFileChange: function onFileChange(e) {
+      var files = e.target.files;
+
+      if (files.length > 0) {
+        //画像が選択されたかをチェック
+        var self = this;
+        var file = files[0];
+        var reader = new FileReader(); //文字ファイルを読み込む
+
+        reader.onload = function (e) {
+          self.imageData = e.target.result;
+        };
+
+        reader.readAsDataURL(file); //画像を読み込み
+      }
+    }
+  }
+});
 
 /***/ }),
 
