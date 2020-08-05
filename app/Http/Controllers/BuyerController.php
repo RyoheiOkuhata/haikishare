@@ -52,33 +52,15 @@ public function update(Request $request,int $id) {
     $buyer = Buyer::where('id', $id)->first();
     $buyer->buyer_name = $request->buyer_name;
 
-  if(!empty($request->img)) {
-       Storage::delete('public/buyerProfile_images', $buyer->id . '.jpg');
-
-       $buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg', 's3');
-
-     }
+    //if(!empty($request->img)) {
+    //   Storage::delete('public/buyerProfile_images', $buyer->id . '.jpg');
+    //   $buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg',);
+    //}
 
 
-    $file = $request->img;
-   $path = Storage::disk('s3')->putFileAs('/', $file, '.jpg', 'public');
-   $buyer->img= $path;
-
-
-
-     //   $file = $request->img;
-      //  Log::debug(print_r( $file , true));
-
-     //   $fileContents = file_get_contents($file->getRealPath());
-        
-
-    // Storage::disk('s3')->put('ファイルパス',ファイルデータ,'公開設定');
-  //  $path =   Storage::disk('s3')->put($file->hashName(), $fileContents, 'public');
-
-    
-     //   
-
-         $buyer->save();
+    $path = Storage::disk('s3')->putFileAs('/',$buyer->id, '.jpg', 'public');
+    $buyer->img= $path;
+    $buyer->save();
 
     return back()->with('flash_message', '編集が完了しました');
 }
