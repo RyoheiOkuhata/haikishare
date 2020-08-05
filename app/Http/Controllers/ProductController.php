@@ -32,6 +32,7 @@ public function PostImg(Request $request, Product $product){
 
         //$request->img->storeAs("public/products_images", Auth::id()."_".time().".".$extension);
         
+        
         $product->img = $request->img->storeAs('public/products_images',Auth::id()."_".time().".".$extension, 's3');
 
     
