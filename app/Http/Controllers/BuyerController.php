@@ -60,7 +60,7 @@ public function update(Request $request,int $id) {
 
 
 
-    $image = new Image();
+
     $uploadImg = $buyer->img  = $request->file('img');
     $path = Storage::disk('s3')->putFile('/', $uploadImg, 'public');
     $buyer->img  = Storage::disk('s3')->url($path);
