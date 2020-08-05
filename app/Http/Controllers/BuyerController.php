@@ -59,15 +59,18 @@ public function update(Request $request,int $id) {
     //}
 
 
+    $file=$request->img;
+    // s3のuploadsファイルに追加
+    $path = Storage::disk('s3')->put('/icon_images',$file, 'public');
 
+    // パスを、ユーザのicon_image_urlというカラムに保存
 
-
-$file=$request->file('img');
-$path = Storage::disk('s3')->put('buyerProfile_images',$file, 'public');
-
-$buyer->img= $path;
-
+    $request->img = $path;
     $buyer->save();
+
+
+
+
 
     return back()->with('flash_message', '編集が完了しました');
 }
