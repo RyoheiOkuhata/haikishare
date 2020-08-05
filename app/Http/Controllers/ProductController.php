@@ -29,9 +29,10 @@ public function PostImg(Request $request, Product $product){
         $extension = $request->img->getClientOriginalExtension();
         //画像を第一引数で指定したディレクトリに保存する。
         //ログインしているユーザーのidと現在時間を画像の名前につけることで画像の判別を行う
-        $request->img->storeAs("public/products_images", Auth::id()."_".time().".".$extension);
 
-        //$buyer->img = $request->img->storeAs('public/products_images',$request->img, 's3');
+        //$request->img->storeAs("public/products_images", Auth::id()."_".time().".".$extension);
+        
+        $buyer->img = $request->img->storeAs('public/products_images',Auth::id()."_".time().".".$extension, 's3');
         
     
         $product->product_name = $request->product_name;
