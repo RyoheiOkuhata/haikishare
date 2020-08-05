@@ -6,7 +6,7 @@
 
 
 
-{{$mimeType}}
+
   <!-- -------------------------card------------------------------->
     <section class="">
       <div class="l-inner__l  font--sub">
