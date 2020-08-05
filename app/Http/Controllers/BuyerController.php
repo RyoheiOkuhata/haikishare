@@ -59,12 +59,14 @@ public function update(Request $request,int $id) {
     //}
 
 
-$file=$request->file('img');
-$path = Storage::disk('s3')->put('buyerProfile_images',$file, 'public');
 
-$buyer->img= $path;
+    $image = new Image();
+    $uploadImg = $buyer->img  = $request->file('img');
+    $path = Storage::disk('s3')->putFile('/', $uploadImg, 'public');
+    $buyer->img  = Storage::disk('s3')->url($path);
+    $image->save();
 
-    $buyer->save();
+
 
     return back()->with('flash_message', '編集が完了しました');
 }
