@@ -69,7 +69,8 @@ public function update(Request $request,int $id) {
 
     // パスを、ユーザのicon_image_urlというカラムに保存
 
-    $request->img = $path;
+ 
+
     $buyer->save();
 
 
