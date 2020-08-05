@@ -16,7 +16,7 @@
                     <ul class="">
                            <li class="">
                               <div class="p-card--img">
-                     <img alt="文字表示" src="{{ asset('/storage/products_images/'.$product->img)}}">
+              <img alt="文字表示" src="https://haiki.s3-ap-northeast-1.amazonaws.com/{{$product->img}}">
                                </div>
                                    <p class="p-card--txt">賞味期限 <span> {{$product->expiration_date}}</span> </p>
                                    <p class="p-card--txt">価格<span>{{$product->price}}</span> 円</p>
