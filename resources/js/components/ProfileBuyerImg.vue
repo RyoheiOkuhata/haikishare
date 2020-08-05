@@ -50,10 +50,14 @@ export default {
     return {
       imageData:'',
       buyerid : this.Idbuyer,
-      buyerSrc:'data:image/png;base64,'+ this.Idbuyer + '.jpg',
+      buyerSrc: url('public/buyerProfile_images'+ this.Idbuyer + '.jpg'),
       edit:true,//エディットモード
       }
     },
+
+ 
+
+
 methods: {
 //------------------------------
 //画像リセット
