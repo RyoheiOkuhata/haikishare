@@ -15,6 +15,7 @@ use App\Buyer;
 use App\Product;
 use App\EmailReset;
 use App\Rules\Hankaku;
+use Illuminate\Http\File;
 
 
 
@@ -58,8 +59,11 @@ public function update(Request $request,int $id) {
     //}
 
 
-    $path = Storage::disk('s3')->putFileAs('/',$buyer->id, '.jpg', 'public');
-    $buyer->img= $path;
+$file=$request->file('img');
+$path = Storage::disk('s3')->put('buyerProfile_images',$file, 'public');
+
+$buyer->img= $path;
+
     $buyer->save();
 
     return back()->with('flash_message', '編集が完了しました');
