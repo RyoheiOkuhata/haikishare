@@ -3,6 +3,10 @@
 @include('nav')
 @section('content')
 @include('users.person')
+
+
+
+
   <section class="" id="">
     <div class="l-inner__l">
       <main class="main-wrap">

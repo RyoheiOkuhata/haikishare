@@ -20,9 +20,11 @@ class BuyerProfileImgComposer {
     $is_img = false;
 
   if($buyer){
-  if(Auth::guard('buyers')->user() && Storage::disk('s3')->exists('public/buyerProfile_images/'.$buyer->id. '.jpg')){
+
+  if(Auth::guard('buyers')->user() && Storage::disk('s3')->get('public/buyerProfile_images/'.$buyer->id. '.jpg')){
     $is_img = true;
   }
+  
   Log::debug(print_r($is_img, true));
     $view->with('is_img',$is_img);
     }

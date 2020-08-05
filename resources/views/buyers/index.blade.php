@@ -3,6 +3,10 @@
 @include('nav')
 @section('content')
 @include('buyers.person')
+
+
+
+{{$mimeType}}
   <!-- -------------------------card------------------------------->
     <section class="">
       <div class="l-inner__l  font--sub">

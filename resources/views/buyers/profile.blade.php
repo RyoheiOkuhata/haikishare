@@ -4,6 +4,9 @@
 @section('content')
 @include('buyers.person')
 
+
+
+
   <section class="" id="">
     <div class="l-inner__l">
       <main class="main-wrap">

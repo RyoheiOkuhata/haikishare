@@ -27,9 +27,20 @@ public function index(int $id) {
     $buyer = Buyer::where('id', $id)->first();
     //バイヤーと商品を紐ずけた中間テーブルから値を取得
     $products = $buyer->orderProduct()->paginate(10);
+
+
+    $contents = $disk->get($filename);
+    $mimeType = $disk->mimeType($filename);
+
+    $disk = Storage::disk('s3');
+    $contents = $disk->get('public/userProfile_images/'. Auth::id() . '.jpg');
+    $mimeType = $disk->mimeType(   $contents );     
+
+
     return view('buyers.index', [
         'buyer_info' => $buyer,
         'products' => $products,
+        'mimeType' => $mimeType,
       ]);
     }
 //----------------------------------------

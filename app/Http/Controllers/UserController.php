@@ -55,10 +55,17 @@ class UserController extends Controller {
                 //productsテーブルのからproduct_id[]の値を元に取得
             }
         }
+
+
+
+
         return view('users.index', [
             'products' => $products,
             'user' => $user,
             'soldOutProducts' => $soldOutProducts,
+
+
+
 ]);
     }
 
@@ -108,7 +115,7 @@ class UserController extends Controller {
     public function profile(int $id){
         $user = User::where('id', $id)->first();
         $prefs = config('prefectures');
-        $is_img = $this->isImg();
+
         Log::debug(print_r($is_img, true));
         return view('users.profile', [
             'user' => $user,
