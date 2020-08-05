@@ -26,13 +26,13 @@ public function PostImg(Request $request, Product $product){
 
     if (isset($request->img)) {
         //拡張子を取得
-        //$extension = $request->img->getClientOriginalExtension();
+        $extension = $request->img->getClientOriginalExtension();
         //画像を第一引数で指定したディレクトリに保存する。
         //ログインしているユーザーのidと現在時間を画像の名前につけることで画像の判別を行う
 
         //$request->img->storeAs("public/products_images", Auth::id()."_".time().".".$extension);
-
-        $product->img = $request->img->storeAs('public/products_images',Auth::id()."_".time().".jpg", 's3');
+        
+        $product->img = $request->img->storeAs('public/products_images',Auth::id()."_".time().".".$extension, 's3');
         
     
         $product->product_name = $request->product_name;
