@@ -59,9 +59,8 @@ public function update(Request $request,int $id) {
     //}
 
 
-    $file=$request->img;
-    // s3のuploadsファイルに追加
-    $path = Storage::disk('s3')->put('/buyerProfile_images',$file, 'public');
+
+    $buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg', 's3');
 
         // s3のuploadsファイルに追加
   //      $path = Storage::disk('s3')->put('buyerProfile_images',$buyer->id .'.jpg', 'public');
