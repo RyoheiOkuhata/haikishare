@@ -50,10 +50,11 @@ export default {
     return {
       imageData:'',
       buyerid : this.Idbuyer,
-      buyerSrc:'https://haiki.s3-ap-northeast-1.amazonaws.com/public/buyerProfile_images/'+ this.Idbuyer + '.jpg',
+      buyerSrc:'https://haikiproject.s3-us-west-1.amazonaws.com/public/buyerProfile_images/'+ this.Idbuyer + '.jpg',
       edit:true,//エディットモード
       }
     },
+
 methods: {
 //------------------------------
 //画像リセット

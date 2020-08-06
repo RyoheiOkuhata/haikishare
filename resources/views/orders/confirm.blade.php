@@ -10,14 +10,14 @@
                     <ul class="">
                            <li class="">
                               <div class="p-card--img">
-                                  <img alt="文字表示" src="https://haiki.s3-ap-northeast-1.amazonaws.com/{{$product->img}}">
+                                <img alt="文字表示" src="https://haikiproject.s3-us-west-1.amazonaws.com/{{$product->img}}">
                                </div>
                                    <p class="p-card--txt">賞味期限 <span> {{$product->expiration_date}}</span> </p>
-                                   <p class="p-card--txt">価格<span>{{$product->price }}</span> 円</p> 
-                              </li> 
+                                   <p class="p-card--txt">価格<span>{{$product->price }}</span> 円</p>
+                              </li>
                       </ul>
                       <ul class="">
-                        <h5 class="c-panel--title">取引先の情報</h5> 
+                        <h5 class="c-panel--title">取引先の情報</h5>
                         <ul class="p-panel--list">
 
                          <li class="p-panel-item">
@@ -30,42 +30,42 @@
                           </li>
 
 
-                                <li class="p-panel-item">                        
+                                <li class="p-panel-item">
                                   <span>お店の名前:</span>
-                                  </p>  
+                                  </p>
                                   <p class="p-card--txt">
                                   {{$product->user->shop_name}}店
-                                  </p>  
+                                  </p>
 
 
-                                <li class="p-panel-item">                        
+                                <li class="p-panel-item">
                                   <span>店舗の名前:</span>
-                                  </p>  
+                                  </p>
                                   <p class="p-card--txt">{{$product->user->branch_name}}店
-                                  </p> 
+                                  </p>
 
-                                <li class="p-panel-item">                        
+                                <li class="p-panel-item">
                                   <span>住所:</span>
-                                  </p>  
+                                  </p>
                                   <p class="p-card--txt">
-                                  {{$product->user->prefecture}}{{$product->user->address}}</p>  
+                                  {{$product->user->prefecture}}{{$product->user->address}}</p>
                                 </li>
-                           </ul> 
+                           </ul>
                    </ul>
                   </div>
-                    <button 
+                    <button
                     class="c-btn p-btn--purchase js-modal-open">購入する
                     </button>
-       
+
                          <div id="app">
                          <router-view></router-view>
                        </div>
                 </form>
               </div>
              </div>
-      </section>      
+      </section>
 
-    
+
     @include('footer')
 
 

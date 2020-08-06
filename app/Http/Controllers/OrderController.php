@@ -16,14 +16,6 @@ use Illuminate\Support\Facades\Log;
 class OrderController extends Controller
 {
 
-  public function isImg()
-  {
-      $is_img = false;
-      if (Storage::disk('local')->exists('public/userProfile_images'. Auth::id() . '.jpg')) {
-          $is_img = true;
-      }
-      return $is_img;
-  }
 
 //-----------------------------------------------------------
 //購入画面へ
@@ -38,7 +30,6 @@ class OrderController extends Controller
     $order = $buyer->orderProduct()->where('product_id',  $id)->count();
     //$buyer->buyers()でbuyerモデルからordersテーブル経由で紐付いているproductモデルのコレクションが返る
     //ログインしているバイヤーとこの商品のidが一致しているレコードがあるかを確認
-    $is_img = $this->isImg();
 
     //Log::debug(print_r($user, true));
     //Log::debug(print_r($order, true));
@@ -59,22 +50,21 @@ class OrderController extends Controller
     return view('orders.confirm', [
         'product' => $product,
         'user' => $user,
-        'is_img' => $is_img
         ]);
-    }    
+    }
     }
     //----------------------------------------------------------
     //購入画面表示
     //-----------------------------------------------------------
     public function confirmGet($id){
 
-        $product = Product::find($id);
+        $product = Product::find($id)->load('user');
         $user = $product->user;
-        $is_img = $this->isImg();
+
         return view( 'orders.confirmGet', [
         'product' => $product,
         'user' => $user,
-        'is_img' => $is_img
+
         ]);
     }
 
@@ -86,12 +76,12 @@ class OrderController extends Controller
    $product = Product::find($id);
    $user = $product->user;
    $buyer = Auth::guard('buyers')->user();
-    Log::debug(print_r( $buyer, true));
+
         $product->orderBuyer()->detach( Auth::guard('buyers')->user()->id);
         //二重登録防止のため、一度消去
         $product->orderBuyer()->attach( Auth::guard('buyers')->user()->id);
         //$product->orders()でproductモデルからordersテーブル経由で紐付いているバイヤーモデルのコレクションが返
-        
+
         $shop =$user;
         $buyer_name =$buyer;
         $to = [
@@ -105,3 +95,6 @@ class OrderController extends Controller
   return redirect()->route('products.index')->with('flash_message', '購入が完了されました');;
     }
 }
+
+51_1596643262.jpg
+

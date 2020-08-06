@@ -1,12 +1,12 @@
 <li class="p-card--gallery">
     <sold-label
-    :initial-is-buyer-ordered-by='@json((bool)$product->orderBuyer()->where('product_id',$product->id)->count())'
+    :initial-is-buyer-ordered-by='@json((bool)$product->orderBuyer()->count())'
     >
     </sold-label>
       <a href="{{route('products.show', ['product_id' => $product])}}">
          <div class="p-card--gallery__img">
            <p class="p-card--gallery__img">
-            <img alt="文字表示" src="https://haiki.s3-ap-northeast-1.amazonaws.com/{{$product->img}}">
+            <img alt="文字表示" src="https://haikiproject.s3-us-west-1.amazonaws.com/{{$product->img}}">
 
            </p>
           </div>
