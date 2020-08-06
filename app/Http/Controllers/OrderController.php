@@ -87,13 +87,10 @@ class OrderController extends Controller
    $user = $product->user;
    $buyer = Auth::guard('buyers')->user();
     Log::debug(print_r( $buyer, true));
-  
-
         $product->orderBuyer()->detach( Auth::guard('buyers')->user()->id);
         //二重登録防止のため、一度消去
         $product->orderBuyer()->attach( Auth::guard('buyers')->user()->id);
-        //$product->orders()でproductモデルからordersテーブル経由で紐付いているバイヤーモデルのコレクションが返る
-
+        //$product->orders()でproductモデルからordersテーブル経由で紐付いているバイヤーモデルのコレクションが返
         
         $shop =$user;
         $buyer_name =$buyer;

@@ -8,8 +8,6 @@
            <p class="p-card--gallery__img">
             <img alt="文字表示" src="https://haiki.s3-ap-northeast-1.amazonaws.com/{{$product->img}}">
 
-
-
            </p>
           </div>
                <h2 class="p-card--gallery__txt">
