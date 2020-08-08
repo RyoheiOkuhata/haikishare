@@ -17,7 +17,7 @@
                               <li class="p-card--article">
                                   <a href="{{ route('products.show', ['product_id' => $soldOutProduct->id]) }}">
                                     <div class="p-card--article__img">
-                       <img alt="文字表示" src="https://haiki.s3-ap-northeast-1.amazonaws.com/{{$product->img}}">
+                                        <img alt="文字表示" src="https://haiki.s3-us-west-1.amazonaws.com/{{$soldOutProduct->img}}">
                                      </div>
                                         <h2 class="p-card--article__txt">
                                              {{$soldOutProduct->product_name}}

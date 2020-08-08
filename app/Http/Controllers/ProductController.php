@@ -17,8 +17,6 @@ public function __construct()//ポリシーを読み込む。
     $this->authorizeResource(Product::class, 'product');
 }
 
-
-
 //----------------------------------------
 //画像登録
 //---------------------------------------
@@ -29,18 +27,18 @@ public function PostImg(Request $request, Product $product){
         $extension = $request->img->getClientOriginalExtension();
         //画像を第一引数で指定したディレクトリに保存する。
         //ログインしているユーザーのidと現在時間を画像の名前につけることで画像の判別を行う
-
+        //local用
         //$request->img->storeAs("public/products_images", Auth::id()."_".time().".".$extension);
 
-        $product->img = $request->img->storeAs('public/products_images',Auth::id()."_".time().".".$extension, 's3');
-       // $product->img = (Auth::id()."_".time().".".$extension);
+         //s3用
+        $product->img=$request->file('img')->store('public/products_images', ['disk' => 's3', 'ACL' => 'public-read']);
+
 
         $product->product_name = $request->product_name;
         $product->expiration_date = $request->expiration_date;
         $product->price= $request->price;
         $product->user_id = $request->user()->id;
         //DBに保存するパスを指定する
-
         return $product;
     }
 
@@ -133,7 +131,6 @@ public function show(Product $product){
         'order' =>$order,
         ]);
     }
-
 //----------------------------------------
 //編集画面
 //----------------------------------------
@@ -149,7 +146,6 @@ return view('products.edit', [
 //----------------------------------------
 
  public function update(Request $request, product $product) {
-     Log::debug(print_r($product->img, true));
      if(isset($product->img)) {//編集の時はimgのrequiredは外す
         $request->validate([
         'product_name' => ['required','max:20'],

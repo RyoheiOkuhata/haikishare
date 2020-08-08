@@ -13,35 +13,20 @@ use Illuminate\Support\Facades\Hash;
 use phpDocumentor\Reflection\Types\Boolean;
 use Carbon\Carbon;
 use App\User;
-use App\Buyer;
 use App\Product;
-use App\Order;
 use App\EmailReset;
 use App\Rules\Hankaku;
 use App\Mail\ChangeEmail;
 use App\Http\Requests\UserProfileRequest;
 use App\Http\Requests\ProductRequest;
 use Request as PostRequest;
-
 class UserController extends Controller {
-
-//----------------------------------------
-//ユーザープロフィール画像のチェック
-//---------------------------------------
-    public function isImg(){
-        $is_img = false;
-        if (Storage::disk('local')->exists('public/userProfile_images/'. Auth::id() . '.jpg')) {
-            $is_img = true;
-        }
-        return $is_img;
-    }
 //-----------------------------------------------------------
 //ユーザが投稿した最近の記事5件
 //-----------------------------------------------------------
     public function index(int $id){
         $user = User::where('id', $id)->first();
-        $is_img = $this->isImg();
-        $products = $user->products->take(5);
+        $products = $user->products()->orderBy('id', 'DESC')->take(5)->get();
         //ユーザーと商品のリレーションから、最新の5件の商品を取得
         $soldOutProducts = $user->soldProduct;
         //hasmanythroughでusers->products->ordersテーブルをまたいでアクセス。売れた商品を取得
@@ -51,21 +36,14 @@ class UserController extends Controller {
                 $product_id[] = $soldOutProduct->product_id;
             }//ordersテーブルのproduct_idカラムを全て取得
             if (!empty($product_id)) {
-                $soldOutProducts = Product::whereIn('id', $product_id)->get()->take(5);
+                $soldOutProducts = Product::whereIn('id', $product_id)->orderBy('id', 'DESC')->take(5)->get();
                 //productsテーブルのからproduct_id[]の値を元に取得
             }
         }
-
-
-
-
         return view('users.index', [
             'products' => $products,
             'user' => $user,
             'soldOutProducts' => $soldOutProducts,
-
-
-
 ]);
     }
 
@@ -96,8 +74,7 @@ class UserController extends Controller {
         if (!empty($soldOutProducts)) {
             foreach ($soldOutProducts as $soldOutProduct) {
                 $product_id[] = $soldOutProduct->product_id;
-                Log::debug(print_r( $product_id, true));
-                     }
+             }
             if (!empty($product_id)) {
                 //ordersテーブルから売れた商品のproduct_idを取得
                 $soldOutProducts = Product::whereIn('id',$product_id)->paginate(10);
@@ -108,19 +85,15 @@ class UserController extends Controller {
         'user' => $user
         ]);
     }
-
     //----------------------------------------
     //ユーザープロフィール編集
     //----------------------------------------
     public function profile(int $id){
         $user = User::where('id', $id)->first();
         $prefs = config('prefectures');
-
-        Log::debug(print_r($is_img, true));
         return view('users.profile', [
             'user' => $user,
             'prefs' => $prefs,
-
         ]);
     }
     //----------------------------------------
@@ -128,23 +101,18 @@ class UserController extends Controller {
     //----------------------------------------
     // GETパラメータが数字かどうかをチェックする
     public function update(UserProfileRequest $request, int $id) {
-
-
         $user = User::where('id', $id)->first();
-            $user->shop_name = $request->shop_name;
-            $user->branch_name = $request->branch_name;
-            $user->prefecture = $request->prefecture ;
-            $user->address = $request->address;
-
-            if (!empty($request->img)) {
-                Storage::delete('public/userProfile_images', Auth::id() . '.jpg');
-                Log::debug(print_r($request->img, true));
-                $user->img = $request->file('img')->storeAs('public/userProfile_images', Auth::id() . '.jpg');
-            }
-
-        $user->save();
-        return back()->with('flash_message', '変更が完了しました');
-
+        $user->shop_name = $request->shop_name;
+        $user->branch_name = $request->branch_name;
+        $user->prefecture = $request->prefecture ;
+        $user->address = $request->address;
+        if (!empty($request->img)) {
+            Storage::delete('public/buyerProfile_images', $user->img);
+            //$buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg', 's3');
+            $user->img=$request->file('img')->store('public/userProfile_images', ['disk' => 's3', 'ACL' => 'public-read']);
+            $user->save();
+            return back()->with('flash_message', '変更が完了しました');
+        }
     }
     //----------------------------------------
     //メールアドレスリセット
@@ -152,7 +120,6 @@ class UserController extends Controller {
     public function emailReset(int $id){
         $user = User::where('id', $id)->first();
         $prefs = config('prefectures');
-        $is_img = $this->isImg();
         return view('users.emailReset', [
               'user' => $user,
               'prefs' => $prefs,
@@ -243,8 +210,6 @@ class UserController extends Controller {
 public function passwordReset(int $id){
     $user = User::where('id', $id)->first();
     $prefs = config('prefectures');
-    $is_img = $this->isImg();
-
     return view('users.passwordReset', [
           'user' => $user,
           'prefs' => $prefs,

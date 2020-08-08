@@ -29,7 +29,7 @@
 <nav class="p-header--nav js-toggle-sp-menu-target">
   <ul class="p-nav js-toggle-close">
       <li class="p-nav--item">
-     <a href="{{ route('products.create')}}" class="p-nav--link">
+     <a href="{{ route('products.index')}}" class="p-nav--link">
       マイページTop
       </a>
     </li>

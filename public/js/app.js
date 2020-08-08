@@ -2226,7 +2226,7 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
   data: function data() {
     return {
       imageData: '',
-      productImg: '/storage/products_images/' + this.Productimg,
+      productImg: 'https://haiki.s3-us-west-1.amazonaws.com/' + this.Productimg,
       edit: false,
       isimg: this.Isimg
     };
@@ -2331,7 +2331,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       imageData: '',
       buyerid: this.Idbuyer,
-      buyerSrc: 'https://haikiproject.s3-us-west-1.amazonaws.com/public/buyerProfile_images/' + this.Idbuyer + '.jpg',
+      buyerSrc: 'https://haiki.s3-us-west-1.amazonaws.com/' + this.Idbuyer,
       edit: true //エディットモード
 
     };
@@ -2442,7 +2442,7 @@ __webpack_require__.r(__webpack_exports__);
       imageData: '',
       id: this.Id,
       userId: this.Iduser,
-      userSrc: '/storage/userProfile_images/' + this.Iduser + '.jpg',
+      userSrc: 'https://haiki.s3-us-west-1.amazonaws.com/' + this.Iduser,
       edit: true //エディットモード
 
     };
@@ -31179,8 +31179,8 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/okuhataryouhei/Desktop/project/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/okuhataryouhei/Desktop/project/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/okuhataryouhei/Desktop/project 5/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/okuhataryouhei/Desktop/project 5/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

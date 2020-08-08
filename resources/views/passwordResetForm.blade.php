@@ -18,7 +18,7 @@
     </label>
   </li>
   <li class="p-form--item">
-    <input id="new-password-confirm" type="text" class="c-text" name="new-password_confirmation"  required autocomplete="new-password-confirm"  placeholder="パスワード確認" >
+    <input id="new-password-confirm" type="password" class="c-text" name="new-password_confirmation"  required autocomplete="new-password-confirm"  placeholder="パスワード確認" >
     <label for="" class="">
 
 

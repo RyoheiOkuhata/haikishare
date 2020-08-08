@@ -57,11 +57,11 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'region' => env('AWS_DEFAULT_REGION'),
-            'bucket' => env('AWS_BUCKET'),
-            'url' => env('AWS_URL'),
+            'key' => env('AKIA2NBGQCZH4TE2MXNW'),
+            'secret' => env('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'),
+            'region' => env('us-west-1'),
+            'bucket' => env('haiki'),
+            'url' => env('https://haiki.herokuapp.com'),
         ],
 
     ],

@@ -6,6 +6,7 @@
 
 
 
+
   <section class="" id="">
     <div class="l-inner__l">
       <main class="main-wrap">
@@ -99,6 +100,7 @@
                       </li>
 
 
+
                  <li class="p-form--item">
                     プロフィール画像
                  </li>
@@ -108,7 +110,7 @@
                       </span>
                   @enderror
                       <profile-img
-                         :Iduser='@json([$user->id])'
+                         :Iduser='@json([$user->img])'
                          :Isimg ='@json($is_img)'
                       ></profile-img>
                   </ul>

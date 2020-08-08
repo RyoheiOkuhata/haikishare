@@ -50,7 +50,7 @@ export default {
   data() {
     return {
       imageData:'',
-      productImg:'/storage/products_images/'+this.Productimg,
+      productImg:'https://haiki.s3-us-west-1.amazonaws.com/'+this.Productimg,
       edit:false,
       isimg:this.Isimg,
 

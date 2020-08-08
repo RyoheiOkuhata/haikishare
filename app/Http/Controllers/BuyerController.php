@@ -16,9 +16,6 @@ use App\Product;
 use App\EmailReset;
 use App\Rules\Hankaku;
 use Illuminate\Http\File;
-
-
-
 class BuyerController extends Controller {
 //----------------------------------------
 //バイヤーのマイページ
@@ -27,11 +24,6 @@ public function index(int $id) {
     $buyer = Buyer::where('id', $id)->first();
     //バイヤーと商品を紐ずけた中間テーブルから値を取得
     $products = $buyer->orderProduct()->paginate(10);
-
-
-
-
-
     return view('buyers.index', [
         'buyer_info' => $buyer,
         'products' => $products,
@@ -63,26 +55,12 @@ public function update(Request $request,int $id) {
     //   Storage::delete('public/buyerProfile_images', $buyer->id . '.jpg');
     //   $buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg',);
     //}
-
-
-
-    $buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg', 's3');
-
-        // s3のuploadsファイルに追加
-  //      $path = Storage::disk('s3')->put('buyerProfile_images',$buyer->id .'.jpg', 'public');
-
-        // パスを、ユーザのicon_image_urlというカラムに保存
-
-    // パスを、ユーザのicon_image_urlというカラムに保存
-
- 
-
+    if (!empty($request->img)) {
+        Storage::delete('public/buyerProfile_images', $buyer->img);
+        //$buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg', 's3');
+        $buyer->img=$request->file('img')->store('public/buyerProfile_images', ['disk' => 's3', 'ACL' => 'public-read']);
+    }
     $buyer->save();
-
-
-
-
-
     return back()->with('flash_message', '編集が完了しました');
 }
 
@@ -91,7 +69,6 @@ public function update(Request $request,int $id) {
     //---------------------------------------
     public function emailReset(int $id){
         $buyer = Buyer::where('id', $id)->first();
-        Log::debug(print_r( $buyer, true));
         return view('buyers.emailReset', [
             'buyer_info' => $buyer,
           ]);

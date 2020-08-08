@@ -40,8 +40,8 @@ class OrderController extends Controller
     $shop =$user;
     $buyer_name =$buyer;
     $to = [
-      'test_01@mail.com',
-      'test_02@mail.com'
+        $shop->email,
+        $buyer_name->email,
   ];
     Mail::to($to)->send(new CancelNotification($shop, $product,$buyer_name));
     return redirect()->route('buyers.index',['id' =>Auth::guard('buyers')->user()])->with('flash_message', '取引をキャンセルしました');
@@ -82,6 +82,16 @@ class OrderController extends Controller
         //$product->orders()でproductモデルからordersテーブル経由で紐付いているバイヤーモデルのコレクションが返
 
 
+        $user = $product->user;
+        $buyer = Auth::guard('buyers')->user();
+        $shop =$user;
+        $buyer_name =$buyer;
+        $to = [
+            $shop->email,
+            $buyer_name->email,
+      ];
+
+    Mail::to($to)->send(new PurchaseNotification($shop, $product,$buyer_name));
 
   return redirect()->route('products.index')->with('flash_message', '購入が完了されました');;
     }

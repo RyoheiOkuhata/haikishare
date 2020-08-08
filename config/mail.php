@@ -31,6 +31,8 @@ return [
 
     'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
 
+
+
     /*
     |--------------------------------------------------------------------------
     | SMTP Host Port
@@ -56,8 +58,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'rassaraway1213@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'haiki'),
     ],
 
     /*
@@ -72,6 +74,9 @@ return [
     */
 
     'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'username' => env('rassaraway1213@gmail.com'),
+    'password' => env('2bhk1118'),
+
 
     /*
     |--------------------------------------------------------------------------

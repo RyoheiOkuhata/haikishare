@@ -50,7 +50,7 @@ export default {
     return {
       imageData:'',
       buyerid : this.Idbuyer,
-      buyerSrc:'https://haikiproject.s3-us-west-1.amazonaws.com/public/buyerProfile_images/'+ this.Idbuyer + '.jpg',
+      buyerSrc:'https://haiki.s3-us-west-1.amazonaws.com/'+ this.Idbuyer,
       edit:true,//エディットモード
       }
     },

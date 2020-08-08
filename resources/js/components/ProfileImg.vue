@@ -55,7 +55,7 @@ export default {
       imageData:'',
       id : this.Id,
       userId : this.Iduser,
-      userSrc:'/storage/userProfile_images/'+ this.Iduser + '.jpg',
+      userSrc:'https://haiki.s3-us-west-1.amazonaws.com/'+ this.Iduser,
       edit:true,//エディットモード
       }
     },

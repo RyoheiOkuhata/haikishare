@@ -13,12 +13,12 @@ class ProfileImgComposer {
   public function __construct(){
 
   }
-  
+
   public function compose(View $view) {
       $user = Auth::guard('web')->user();
       $is_img = false;
       if($user) {
-      if (Storage::disk('local')->exists('public/userProfile_images/'. $user->id . '.jpg')) {
+      if (Auth::guard('web')->user() && Storage::disk('s3')->exists($user->img)) {
           $is_img = true;
       }
       Log::debug(print_r($is_img, true));

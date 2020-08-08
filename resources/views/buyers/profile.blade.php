@@ -42,7 +42,7 @@
                       <label for="">プロフィール画像</label>
                     </li>
                       <profile-buyer-img
-                         :Idbuyer='@json([$buyer_info->id])'
+                         :Idbuyer='@json([$buyer_info->img])'
                          :Isimg ='@json($is_img)'
                       ></product-buyer-img>
                       </ul>

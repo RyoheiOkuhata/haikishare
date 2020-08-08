@@ -10,7 +10,7 @@
                     <ul class="">
                            <li class="">
                               <div class="p-card--img">
-                                <img alt="文字表示" src="https://haikiproject.s3-us-west-1.amazonaws.com/{{$product->img}}">
+                                <img alt="文字表示" src="https://haiki.s3-us-west-1.amazonaws.com/{{$product->img}}">
                                </div>
                                    <p class="p-card--txt">賞味期限 <span> {{$product->expiration_date}}</span> </p>
                                    <p class="p-card--txt">価格<span>{{$product->price }}</span> 円</p>
@@ -22,7 +22,7 @@
 
                          <li class="p-panel-item">
                          @if($product->user->img)
-                          <img src="/storage/userProfile_images/{{$product->user->id}}.jpg" class="p-image__round" >
+                         <img src="https://haiki.s3-us-west-1.amazonaws.com/{{$user->img}}" class="p-image__round" >
                         @else
 
      <img class="p-image__round" src="{{ asset('imges/prof-def.png')}}">
