@@ -8,6 +8,7 @@
        <div class="c-form--title">パスワード用メール送信</div>
          <div class="l-inner__body">
               <div class="p-login">
+                  
                     <form method="POST" action="{{ route('buyer_auth.password.update') }}" class="c-form p-form__login" >
                     @csrf
 

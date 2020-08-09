@@ -4,7 +4,7 @@
 @section('content')
     <section class="l-inner--wrapper__m" id="">
 
-
+        @include('errMessage.errMessage')
       <div class="l-inner l-inner__s">
        <div class="c-form--title">パスワード用メール送信</div>
          <div class="l-inner__body">
