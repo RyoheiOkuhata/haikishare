@@ -76,7 +76,7 @@ class LoginController extends Controller
        $request->session()->flush();
        $request->session()->regenerate();
 
-       return redirect()->route('products.index')->with('flash_message', 'ログアウトしました');
+       return redirect()->route('products.index')->with('flash_message', 'ログアウト');
    }
     
 }
