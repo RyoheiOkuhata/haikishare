@@ -47,6 +47,10 @@ input {
   box-sizing: border-box;
 }
 
+.expiration {
+    background: #ffff;
+}
+
 
 button:hover {
   transition: .3s;
@@ -63,9 +67,7 @@ input,textarea {
   width: 100%;
   }
 select {
--webkit-appearance: none;
--moz-appearance: none;
-appearance: none;
+    -webkit-appearance: none;
    cursor: grab;
   resize: none;
   outline: none;

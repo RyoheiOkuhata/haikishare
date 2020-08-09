@@ -57,13 +57,11 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => env('AKIA2NBGQCZH4TE2MXNW'),
-            'secret' => env('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'),
-            'region' => env('us-west-1'),
-            'bucket' => env('haiki'),
-            'url' => env('https://haiki.herokuapp.com'),
+            'key' => "AKIA2NBGQCZHWYZ254OS",
+            'secret' => "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",
+            'region' =>  "us-west-1",
+            'bucket' =>  "haiki",
         ],
-
     ],
 
 ];
