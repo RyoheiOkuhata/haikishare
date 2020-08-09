@@ -31,21 +31,21 @@
 
 
                                 <li class="p-panel-item">
-                                  <span>お店の名前:</span>
+                                  <span>お店の名前</span>
                                   </p>
                                   <p class="p-card--txt">
-                                  {{$product->user->shop_name}}店
+                                  {{$product->user->shop_name}}
                                   </p>
 
 
                                 <li class="p-panel-item">
-                                  <span>店舗の名前:</span>
+                                  <span>店舗の名前</span>
                                   </p>
                                   <p class="p-card--txt">{{$product->user->branch_name}}店
                                   </p>
 
                                 <li class="p-panel-item">
-                                  <span>住所:</span>
+                                  <span>住所</span>
                                   </p>
                                   <p class="p-card--txt">
                                   {{$product->user->prefecture}}{{$product->user->address}}</p>

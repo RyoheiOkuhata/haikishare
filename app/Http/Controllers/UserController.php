@@ -110,9 +110,9 @@ class UserController extends Controller {
             Storage::delete('public/buyerProfile_images', $user->img);
             //$buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg', 's3');
             $user->img=$request->file('img')->store('public/userProfile_images', ['disk' => 's3', 'ACL' => 'public-read']);
-            $user->save();
-            return back()->with('flash_message', '変更が完了しました');
         }
+        $user->save();
+        return back()->with('flash_message', '変更が完了しました');
     }
     //----------------------------------------
     //メールアドレスリセット

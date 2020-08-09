@@ -50,19 +50,16 @@ class LoginController extends Controller
     *
     * @return Response
     */
-   public function authenticate(Request $request)
-   {
+   public function authenticate(Request $request) {
        $request->validate([
         'email' => 'required|string|email|',
         'password' => ['required','string'],
        ]);
+       
        if( Auth::guard('buyers')::attempt(['email'=>$request->input('email'),'password'=>$request->input('password')])){
-        //$request->session()->flush();
-        //$request->session()->regenerate();
         return redirect()->route('products.index')->with('flash_message', 'ログインしました');
-       }else{
-           return redirect()->back()->with('flash_message', 'ログインに失敗しました');
        }
+       
    }
 
    protected function guard()
