@@ -44,7 +44,7 @@
                   </ul>
         
                   <div class="submit-btn">
-                    <input type="submit" value="パスワード用メール送信" class="p-btn--submit c-btn">
+                    <input type="submit" value="パスワード変更" class="p-btn--submit c-btn">
                   </div>
                 </form>
               </div>

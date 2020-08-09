@@ -7,9 +7,7 @@
       <div class="l-inner l-inner__s">
        <div class="c-form--title">パスワード用メール送信</div>
          <div class="l-inner__body">
-              <div class="p-login">
-
-                  
+              <div class="p-login">                  
                     <form method="POST" action="{{ route('buyer_auth.password.update') }}" class="c-form p-form__login" >
                     @csrf
 
@@ -47,7 +45,7 @@
                   </ul>
         
                   <div class="submit-btn">
-                    <input type="submit" value="パスワード用メール送信" class="p-btn--submit c-btn">
+                    <input type="submit" value="パスワード変更" class="p-btn--submit c-btn">
                   </div>
   
   
