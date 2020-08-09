@@ -4,6 +4,12 @@
 @section('content')
 @include('buyers.person')
 
+@if (session('status'))
+<div class="alert alert-success" role="alert">
+    {{ session('status') }}
+</div>
+@endif
+
   <section class="" id="">
     <div class="l-inner__l">
       <main class="main-wrap">
