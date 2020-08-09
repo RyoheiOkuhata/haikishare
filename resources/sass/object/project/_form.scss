@@ -1,7 +1,8 @@
 .img-preview {
     position: absolute;
-    top:0px;
+    top:-5px;
     left:0px;
+    height: 200px;
   @include mq() {
     height: 100%;
   }
