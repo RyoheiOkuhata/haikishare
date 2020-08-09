@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'password' => 'Passwords must be at least eight characters and match the confirmation.',
+    'password' => '８文字以上です',
     'reset' => 'パスワードがリセットされました！',
     'sent' => 'メールを送信しました',
-    'token' => 'This password reset token is invalid.',
+    'token' => 'トークンが有効ではありません',
     'user' => "このメールアドレスにマッチしたユーザーが見つかりませんでした",
 ];
