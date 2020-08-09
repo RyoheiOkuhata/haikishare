@@ -22,7 +22,7 @@ class ResetPasswordController extends Controller
 
    public function showResetForm(Request $request, $token = null)
    {
-       return view('AuthBuyer.passwords.reset')->with(['token' => $token, 'email' => $request->email]);
+       return view('authBuyer.passwords.reset')->with(['token' => $token, 'email' => $request->email]);
     }
 
     protected function guard()
