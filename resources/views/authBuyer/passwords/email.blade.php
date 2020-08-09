@@ -1,10 +1,17 @@
 @extends('layouts.app')
+
 @section('title', 'パスワード変更')
+
 @include('nav')
+
 @section('content')
     <section class="l-inner--wrapper__m" id="">
 
-        @include('errMessage.errMessage')
+        @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+    @endif
       <div class="l-inner l-inner__s">
        <div class="c-form--title">パスワード用メール送信</div>
          <div class="l-inner__body">
