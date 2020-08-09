@@ -8,13 +8,7 @@
     <section class="l-inner--wrapper__m" id="">
 
 
-@if (session('status'))
-    <div class="flash_message">
-      <p class="flash_meg--txt">  {{ session('status') }}
-      <i class="far fa-thumbs-up"></i>
-      </p>
-</div>
-@endif
+
 
 
       <div class="l-inner l-inner__s">
