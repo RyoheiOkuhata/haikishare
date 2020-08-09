@@ -2,12 +2,8 @@
 @section('title', 'Top Page')
 @include('nav')
 @section('content')
+@include('stateMessage')
 
-@if (session('status'))
-<div class="alert alert-success" role="alert">
-    {{ session('status') }}
-</div>
-@endif
 
 <!-- -------------------------search------------------------------->
 <section class="l-inner-wrapper__s u-bgcolor__accent" id="Salon">

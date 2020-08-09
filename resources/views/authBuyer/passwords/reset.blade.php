@@ -2,8 +2,9 @@
 @section('title', 'パスワード変更')
 @include('nav')
 @section('content')
-    <section class="l-inner--wrapper__m" id="">
+@include('stateMessage')
 
+    <section class="l-inner--wrapper__m" id="">
       <div class="l-inner l-inner__s">
        <div class="c-form--title">パスワード用メール送信</div>
          <div class="l-inner__body">

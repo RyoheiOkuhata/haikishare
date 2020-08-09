@@ -2,16 +2,8 @@
 @section('title', 'パスワード変更')
 @include('nav')
 @section('content')
+@include('stateMessage')
     <section class="l-inner--wrapper__m" id="">
-
- @if (session('status'))
-    <div class="flash_message">
-      <p class="flash_meg--txt">  {{ session('status') }}
-      <i class="far fa-thumbs-up"></i>
-      </p>
-</div>
-@endif
-
         @include('errMessage.errMessage')
       <div class="l-inner l-inner__s">
        <div class="c-form--title">パスワード用メール送信</div>
