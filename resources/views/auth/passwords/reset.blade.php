@@ -10,7 +10,6 @@
               <div class="p-login">
                     <form method="POST" action="{{ route('password.update') }}" class="c-form p-form__login" >
                     @csrf
-
                     <input type="hidden" name="token" value="{{ $token }}">
 
                   <ul class="">
@@ -24,7 +23,7 @@
                         <input id="email" type="text" class="c-text @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"  placeholder="メールアドレス" >
                     </li>  
 
-                @error('password')
+            @error('password')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>

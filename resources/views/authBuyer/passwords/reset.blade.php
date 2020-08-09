@@ -8,6 +8,15 @@
        <div class="c-form--title">パスワード用メール送信</div>
          <div class="l-inner__body">
               <div class="p-login">
+@if (session('status'))
+    <div class="flash_message">
+      <p class="flash_meg--txt">  {{ session('status') }}
+      <i class="far fa-thumbs-up"></i>
+      </p>
+</div>
+@endif
+
+
                   
                     <form method="POST" action="{{ route('buyer_auth.password.update') }}" class="c-form p-form__login" >
                     @csrf
