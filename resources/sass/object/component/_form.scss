@@ -7,8 +7,12 @@
   border: 1px solid $base-color;
   font-size: $font-size_m;
   margin: auto;
-  background-color: $color_sub;
   }
+
+.c-select {
+background-color: $color_sub;
+border-radius: 100px;
+}
 
 .c-text--price {
   height: $space_3l;
