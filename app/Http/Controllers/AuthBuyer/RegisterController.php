@@ -19,7 +19,13 @@ class RegisterController extends Controller
     {
     return Auth::guard('buyers');
     }
-protected $redirectTo = '/';
+
+
+protected function redirectTo() {
+    session()->flash('flash_message', '新規登録しました');
+    return '/';
+}
+
 
     public function showRegistrationForm (){
         return view('authBuyer.register');

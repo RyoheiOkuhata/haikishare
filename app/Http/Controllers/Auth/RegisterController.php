@@ -28,15 +28,19 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+
+     
+    protected function redirectTo() {
+        session()->flash('flash_message', '新規登録しました');
+        return '/';
+    }
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct(){
         $this->middleware('guest');
     }
 
