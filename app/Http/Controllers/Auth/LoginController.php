@@ -34,10 +34,11 @@ class LoginController extends Controller
     }
 
     protected function loggedOut(Request $request)
-{
-    session()->flash('flash_message', 'ログアウトしました');
-    return '/';
-}
+    {
+        session()->flash('flash_message', 'ログアウトしました');
+        return '/';
+    }
+    
 
     /**
      * Create a new controller instance.
