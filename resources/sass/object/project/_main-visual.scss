@@ -11,6 +11,7 @@
   overflow: hidden;
   color: $color_default;
   @include mq() {
+    padding-top: 33%;
     width: 100%;
     display: flex;
     justify-content: center;

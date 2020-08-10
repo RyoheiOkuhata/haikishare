@@ -1195,6 +1195,7 @@ p {
 
 @media screen and (max-width: 768px) {
   .p-mv {
+    padding-top: 33%;
     width: 100%;
     display: flex;
     justify-content: center;
