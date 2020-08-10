@@ -51,7 +51,7 @@ protected function redirectTo() {
     Log::debug(print_r( $buyer, true));
     Auth::guard('buyers')->login($buyer);
 
-    return redirect()->route('products.index')->with('flash_message', 'アカウント登録が完了しました');
+    return ;
     }
 
 }

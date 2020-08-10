@@ -34,14 +34,11 @@ class LoginController extends Controller
     return '/';
 }
 
-
 protected function loggedOut(Request $request)
 {
     session()->flash('flash_message', 'ログアウトしました');
     return '/';
 }
-
-
 
    /**
     * Create a new controller instance.
@@ -84,10 +81,7 @@ protected function loggedOut(Request $request)
    public function logout(Request $request)
    {
        Auth::guard('buyers')->logout();
-       $request->session()->flush();
-       $request->session()->regenerate();
-
-       return redirect()->route('products.index')->with('flash_message', 'ログアウトしました');
+       return ;
    }
     
 }
