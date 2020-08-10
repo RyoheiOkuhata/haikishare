@@ -5,8 +5,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  padding-top: 27%;
+  padding-top: 52%;
+  position: relative;
   background-size: cover; 
+  overflow: hidden;
   color: $color_default;
   @include mq() {
     width: 100%;
@@ -17,8 +19,8 @@
   &--ttl {
     font-size: $font-size_3l;
     position: absolute;
-    bottom: 300px;
-    right: 100px;
+    bottom:200px;
+    right: 50px;
     padding:$space_m  $space_xxl;
     br {
       display: none;

@@ -1186,8 +1186,10 @@ p {
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  padding-top: 27%;
+  padding-top: 52%;
+  position: relative;
   background-size: cover;
+  overflow: hidden;
   color: #635f5a;
 }
 
@@ -1203,8 +1205,8 @@ p {
 .p-mv--ttl {
   font-size: 38px;
   position: absolute;
-  bottom: 300px;
-  right: 100px;
+  bottom: 200px;
+  right: 50px;
   padding: 10px 30px;
 }
 
