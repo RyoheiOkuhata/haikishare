@@ -21,9 +21,7 @@ class LoginController extends Controller
    | to conveniently provide its functionality to your applications.
    |
    */
-
    use AuthenticatesUsers;
-
    /**
     * Where to redirect users after login.
     *
@@ -50,12 +48,13 @@ class LoginController extends Controller
     *
     * @return Response
     */
-   public function authenticate(Request $request)
-   {
+   public function authenticate(Request $request){
+
        $request->validate([
         'email' => 'required|string|email|',
-        'password' => ['required','string'],
+        'password' =>'required|string|',
        ]);
+
        if( Auth::guard('buyers')::attempt(['email'=>$request->input('email'),'password'=>$request->input('password')])){
 
         return redirect()->route('products.index')->with('flash_message', 'ログインしました');
