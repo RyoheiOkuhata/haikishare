@@ -19,7 +19,7 @@
   &--ttl {
     font-size: $font-size_3l;
     position: absolute;
-    bottom:200px;
+    bottom:100px;
     color: $color_sub;
     right: 50px;
     padding:$space_m  $space_xxl;
@@ -31,10 +31,10 @@
     }
     @include mq() {
         position: absolute;
-        top: 0px;
+        top: 0;
+        right: 0;
     font-size: $font-size_xxl;
     text-align: center;
-    position: initial;
      }
     }
 }

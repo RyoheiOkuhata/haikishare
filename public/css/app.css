@@ -1205,7 +1205,7 @@ p {
 .p-mv--ttl {
   font-size: 38px;
   position: absolute;
-  bottom: 200px;
+  bottom: 100px;
   color: #FFFFFF;
   right: 50px;
   padding: 10px 30px;
@@ -1224,10 +1224,10 @@ p {
 @media screen and (max-width: 768px) {
   .p-mv--ttl {
     position: absolute;
-    top: 0px;
+    top: 0;
+    right: 0;
     font-size: 30px;
     text-align: center;
-    position: initial;
   }
 }
 
