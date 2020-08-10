@@ -591,6 +591,7 @@ p {
 .c-select {
   background-color: #FFFFFF;
   width: 100%;
+  margin: auto;
 }
 
 .c-text--price {

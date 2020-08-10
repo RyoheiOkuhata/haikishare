@@ -28,7 +28,7 @@
             </ul>
              <ul class="p-form--list">
        
-               <li class="u-border__none c-select">
+            <li class="u-border__none c-select">
                  <select name="prefecture" id="" class="">
                   <option value="">コンビニ都道府県</option>
                    @foreach($prefs as $pref )
@@ -37,9 +37,9 @@
                     >{{$pref}}</option>
                    @endforeach
                 </select>
-            </li>
+             </li>
   
-              <li class=" c-text u-border__none c-select">
+              <li class="u-border__none c-select">
               <select name="expiration" id="">
                 <option value="" >賞味期限</option>
                 <option value="切れていない"
