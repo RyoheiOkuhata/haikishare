@@ -596,7 +596,7 @@ p {
   margin-right: 5px;
 }
 
-.c-select:first-child {
+.c-select:last-child {
   margin-right: 0;
 }
 
