@@ -1186,7 +1186,7 @@ p {
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  padding-top: 52%;
+  padding-top: 27%;
   position: relative;
   background-size: cover;
   overflow: hidden;
@@ -1206,6 +1206,7 @@ p {
   font-size: 38px;
   position: absolute;
   bottom: 200px;
+  color: #FFFFFF;
   right: 50px;
   padding: 10px 30px;
 }
@@ -1222,6 +1223,8 @@ p {
 
 @media screen and (max-width: 768px) {
   .p-mv--ttl {
+    position: absolute;
+    top: 0px;
     font-size: 30px;
     text-align: center;
     position: initial;

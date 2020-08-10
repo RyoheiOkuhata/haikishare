@@ -5,7 +5,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  padding-top: 52%;
+  padding-top: 27%;
   position: relative;
   background-size: cover; 
   overflow: hidden;
@@ -20,6 +20,7 @@
     font-size: $font-size_3l;
     position: absolute;
     bottom:200px;
+    color: $color_sub;
     right: 50px;
     padding:$space_m  $space_xxl;
     br {
@@ -29,6 +30,8 @@
       }
     }
     @include mq() {
+        position: absolute;
+        top: 0px;
     font-size: $font-size_xxl;
     text-align: center;
     position: initial;
