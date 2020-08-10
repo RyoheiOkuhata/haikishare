@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -32,6 +33,12 @@ class LoginController extends Controller
         return '/';
     }
 
+    protected function loggedOut(Request $request)
+{
+    session()->flash('flash_message', 'ログアウトしました');
+    return '/';
+}
+
     /**
      * Create a new controller instance.
      *
@@ -43,5 +50,5 @@ class LoginController extends Controller
     }
 
 
-    
+
 }
