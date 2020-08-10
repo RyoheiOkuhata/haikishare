@@ -57,8 +57,7 @@ class LoginController extends Controller
         'password' => ['required','string'],
        ]);
        if( Auth::guard('buyers')::attempt(['email'=>$request->input('email'),'password'=>$request->input('password')])){
-        $request->session()->flush();
-        $request->session()->regenerate();
+
         return redirect()->route('products.index')->with('flash_message', 'ログインしました');
        }else{
            return redirect()->back()->with('flash_message', 'ログインに失敗しました');
