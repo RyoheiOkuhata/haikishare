@@ -590,7 +590,7 @@ p {
 
 .c-select {
   background-color: #FFFFFF;
-  border-radius: 100px;
+  width: 100%;
 }
 
 .c-text--price {

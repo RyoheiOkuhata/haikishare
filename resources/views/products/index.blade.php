@@ -28,7 +28,7 @@
             </ul>
              <ul class="p-form--list">
        
-               <li class=" c-text u-border__none p-form--item">
+               <li class="u-border__none c-select">
                  <select name="prefecture" id="" class="">
                   <option value="">コンビニ都道府県</option>
                    @foreach($prefs as $pref )
