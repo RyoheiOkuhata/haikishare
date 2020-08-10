@@ -592,6 +592,7 @@ p {
   background-color: #FFFFFF;
   width: 100%;
   margin: auto;
+  height: 40px;
 }
 
 .c-text--price {
