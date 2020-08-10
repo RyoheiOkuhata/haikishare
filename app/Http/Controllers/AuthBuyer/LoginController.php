@@ -29,6 +29,13 @@ class LoginController extends Controller
     */
 
 
+   protected function redirectTo() {
+    session()->flash('flash_message', 'ログインしました');
+    return '/';
+}
+
+
+
    /**
     * Create a new controller instance.
     *
@@ -56,7 +63,6 @@ class LoginController extends Controller
        ]);
 
        if( Auth::guard('buyers')::attempt(['email'=>$request->input('email'),'password'=>$request->input('password')])){
-
         return redirect()->route('products.index')->with('flash_message', 'ログインしました');
        }else{
            return redirect()->back()->with('flash_message', 'ログインに失敗しました');
