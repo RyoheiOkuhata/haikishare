@@ -56,8 +56,10 @@
     background-color: $color_default;
     color: $color_sub;
     width: 100%;
+    padding: $font-size_l;
+
   }
-  
+
   .p-btn--purchase {
     margin-top: $space_xl;
     background-color: $accent;
