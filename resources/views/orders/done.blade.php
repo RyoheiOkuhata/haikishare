@@ -5,8 +5,6 @@
 @section('content')
   @include('nav')
 
-
-
 購入が完了しました
 
 

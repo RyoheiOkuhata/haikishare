@@ -3,7 +3,6 @@
 @include('nav')
 @section('content')
 @include('users.person')
-
     <section class="l-inner--wrapper__s">
       <div class="l-inner__l">
         <main class="main-wrap">
@@ -38,9 +37,6 @@
            </main>
         </div>
     </section>
-
-
-
     <div class="p-modal js-modal">
         <div class="p-modal--bg js-modal-close"></div>
         <form method="POST" action="{{ route('products.destroy', ['product' => $product]) }}" class="form">
@@ -53,11 +49,6 @@
        <button class="js-modal-close btn p-btn--close" href="">戻る</button>
         </div>
     </div>
-
-
-
-
-
 
     @include('footer')
 @endsection

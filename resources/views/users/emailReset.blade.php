@@ -13,7 +13,7 @@
                  <div class="l-inner--body">
                    <div class="p-login">
                     @include('errMessage.errMessage')
-                    <form method="POST" action="{{route('users.email.update', ['id' =>Auth::guard('web')->user()]) }}">
+                    <form method="POST" action="{{route('users.email.sendemail', ['id' =>Auth::guard('web')->user()]) }}">
                         @include('emailResetForm')
                     </form>
                         </div>

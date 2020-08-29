@@ -3,8 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-
 use App\Rules\Hankaku;
+
 class ProductRequest extends FormRequest {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,10 +27,12 @@ class ProductRequest extends FormRequest {
     public function rules()
     {
         return [
-            'product_name' => ['required','max:20'],
+            'product_name' => 'required|max:20|',
             'expiration_date' => 'required|date_format:"Y-m-d"|',
-            'price' => 'required|numeric|',
-            'img' => 'required|file|image|mimes:jpeg,png,jpg,gif|max:2500'
+            'price' => 'required|numeric|min:0|',
+            'comment' => 'required|string|max:300|',
+            'img' => 'required|file|image|mimes:jpeg,png,jpg,gif|max:2500|',
+
         ];
     }
 
@@ -42,6 +44,7 @@ class ProductRequest extends FormRequest {
         'price' => '価格',
         'expiration_date' => '賞味期限',
         'product_name' => '商品の名前',
+        'comment' =>'コメント'
     ];
 }
 

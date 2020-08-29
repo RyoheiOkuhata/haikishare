@@ -142,6 +142,7 @@
     margin-right: $space_m;
     height: $space_xxl;
     line-height: $space_xxl;
+    z-index:10;
     @include md(md) {
       display: none;
        }

@@ -15,7 +15,7 @@
                      <ul class="c-card--list__flex">
                           @foreach($soldOutProducts as $soldOutProduct)
                               <li class="p-card--article">
-                                  <a href="{{ route('products.show', ['product_id' => $soldOutProduct->id]) }}">
+                                  <a href="{{ route('soldProductDetail', ['product_id' => $soldOutProduct->id]) }}">
                                     <div class="p-card--article__img">
                                         <img alt="文字表示" src="https://haiki.s3-us-west-1.amazonaws.com/{{$soldOutProduct->img}}">
                                      </div>

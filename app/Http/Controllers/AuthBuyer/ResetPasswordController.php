@@ -13,7 +13,11 @@ class ResetPasswordController extends Controller
 
     use ResetsPasswords;
 
-   protected $redirectTo = '/';
+    protected function reset()
+     {
+
+        return redirect('TopPage')->with('flash_message', 'パスワード変更');
+    }
 
     public function __construct()
     {

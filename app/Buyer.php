@@ -1,5 +1,4 @@
 <?php
-
 namespace App;
 
 use Illuminate\Support\Facades\Auth;
@@ -8,15 +7,7 @@ use App\BuyerNotifications\BuyerPasswordResetNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use App\Notifications\PasswordResetNotification;
-
-
-
-
-
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
-
-
 
 class Buyer extends Authenticatable
 {

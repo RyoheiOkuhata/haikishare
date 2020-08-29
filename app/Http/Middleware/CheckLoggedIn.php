@@ -18,8 +18,17 @@ class CheckLoggedIn
     {
         if (! Auth::guard('buyers')->user()) {
             return redirect('buyers/login');
+        }else{
+            if( Auth::guard('buyers')->user()->id === (int)$request->route()->parameter("id") ){
+                 return $next($request);
+             }else{
+                 // ログインしているがユーザーが違う場合のリダイレクト
+                 return redirect('buyers/login');
+             }
         }
-
-        return $next($request);
     }
+
+
 }
+
+

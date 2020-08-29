@@ -1,14 +1,22 @@
 <template>
   <div>
- <!-- 
+ <!--
 このユーザーが購入していてこの商品が購入されていたら
  -->
-    <button 
+
+
+
+    <button
     class="c-btn p-btn--purchase "
     v-if="isOrderedBy && idsBuyerOrderedBy"
     >キャンセルする
     </button>
- <!-- 
+
+
+
+
+
+ <!--
 このユーザーが購入していなくてこの商品が購入されていたら
  -->
     <p
@@ -16,7 +24,7 @@
     v-else-if="isOrderedBy && !idsBuyerOrderedBy"
     >売り切れです
     </p>
- <!-- 
+ <!--
 誰も購入していなかったら
  -->
     <button v-else

@@ -99,7 +99,7 @@ return [
     'string'               => ':attribute は文字列のみ有効です',
     'timezone'             => ':attribute 正しいタイムゾーンのみ有効です',
     'unique'               => ':attribute は既に存在します',
-    'uploaded'             => ':attribute アップロードに失敗しました',
+    'uploaded'             => ':attribute  のアップロードに失敗しました',
     'url'                  => ':attribute は正しいURL書式のみ有効です',
 
 
@@ -112,9 +112,11 @@ return [
         'branch_name' => '支店名',
         'prefecture' => '都道府県',
         'address' => '住所',
+        'img' => '画像',
     ],
 
- 
+
+
 ];
 
 

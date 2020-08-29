@@ -1,5 +1,5 @@
 .p-mv {
-  background-image: url("../imges/mainvisual.jpg");
+  background-image: url("../images/mainimg.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -10,6 +10,7 @@
   background-size: cover; 
   overflow: hidden;
   color: $color_default;
+  z-index:1;
   @include mq() {
     padding-top: 33%;
     width: 100%;

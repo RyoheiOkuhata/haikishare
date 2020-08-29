@@ -20,7 +20,7 @@ margin-right:$space_s;
 .c-select:last-child{
     margin-right:0;
   }
-  
+
 
 .c-text--price {
   height: $space_3l;
@@ -38,6 +38,7 @@ margin-right:$space_s;
 .c-file {
     height: 200px;
     width: 100%;
+    cursor: grab;
     box-sizing: border-box;
     margin-bottom: $space_xl;
     border-radius: 2px;
@@ -49,3 +50,15 @@ margin-right:$space_s;
   margin-bottom: $space_xl;
 }
   }
+
+  .c-textarea {
+    height: 120px;
+    width: 100%;
+    border-radius: 100px;
+    box-sizing: border-box;
+    border-radius: $space_m;
+    border: 1px solid $base-color;
+    font-size: $font-size_m;
+    margin: auto;
+    padding: 10px;
+    }

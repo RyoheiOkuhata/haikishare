@@ -4,12 +4,11 @@
     @if($is_img)
     <img src="https://haiki.s3-us-west-1.amazonaws.com/{{$buyer_info->img}}" class="p-image__round" >
     @else
-    <img class="p-image__round" src="{{ asset('imges/prof-def.png')}}">
+    <img class="p-image__round" src="{{ asset('images/prof-def.png')}}"srcset={{ asset('images/retina/prof-def@2x.png')}}>
      @endif
      <span class="p-profile--name">
       {{$buyer_info->buyer_name}}
       </span>
-
      </div>
      </div>
 </section>

@@ -1,24 +1,25 @@
 .p-card--gallery  {
-  width: calc(20% - 10px);
+
+  width: calc(25% - 20px);
   text-align: center;
   padding: $space_l;
   box-sizing: border-box;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
-  margin-right: $space_m;
-  margin-bottom: $space_m;
+  margin-right: $space_xl;
+  margin-bottom: $space_xl;
   position: relative;
   height: 300px;
   @include mq() {
-  width: calc(33.33% - 10px);
+  width: calc(25% - 15px);
   box-sizing: border-box;
   }
  @include ss(ss) {
-    width: 33.333%;
+    width: calc(50% - 10px);
     box-sizing: border-box;
-    margin-right: 0px;
-    padding: 0px;
-    height: 200px;
+    height: 300px;
  }
+
+
  &__txt {
   margin-top: $space_xl;
     color: $color_third;
@@ -41,9 +42,6 @@
     text-align: right;
     font-size: $font-size_s;
     color: $accent_font_color;
-  @include ss(ss) {
-    display:none;
- }
 
      }
   &__img {
@@ -56,4 +54,20 @@
     }
      }
   }
+
+
+  .p-card--gallery:nth-child(4n){
+    margin-right:0;
+  }
+
+
+
+ @include ss(ss) {
+    .p-card--gallery:nth-child(2n){
+        margin-right:0;
+      }
+   }
+
+
+
 

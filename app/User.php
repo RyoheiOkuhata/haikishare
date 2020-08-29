@@ -1,21 +1,18 @@
 <?php
-
 namespace App;
 
-
-use Illuminate\Auth\MustVerifyEmail; 
+use Illuminate\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Notifications\PasswordResetNotification;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+class User extends Authenticatable  
+{
 
-
-class User extends Authenticatable  {  
-
-    use MustVerifyEmail, Notifiable;  //MustVerifyEmailを追加
-
+    use MustVerifyEmail, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -59,12 +56,12 @@ public function products(): HasMany
 {
 return $this->hasMany('App\Product');
 }
-    
+
  public function soldProduct()
 {
  return $this->hasManyThrough('App\Order', 'App\Product', 'user_id', 'product_id','id','id');
     }
-    
+
 
 public function sendPasswordResetNotification($token)
 {

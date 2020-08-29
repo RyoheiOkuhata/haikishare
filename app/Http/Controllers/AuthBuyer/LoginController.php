@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+
+    protected function redirectTo() 
+    {
+        session()->flash('flash_message', 'ログインしました');
+        return '/TopPage';
+    }
    /*
    |--------------------------------------------------------------------------
    | Login Controller
@@ -29,15 +35,11 @@ class LoginController extends Controller
     */
 
 
-   protected function redirectTo() {
-    session()->flash('flash_message', 'ログインしました');
-    return '/';
-}
 
 protected function loggedOut(Request $request)
 {
     session()->flash('flash_message', 'ログアウトしました');
-    return '/';
+    return '/TopPage';
 }
 
    /**
@@ -59,29 +61,32 @@ protected function loggedOut(Request $request)
     *
     * @return Response
     */
-   public function authenticate(Request $request){
+   public function authenticate(Request $request)
+   {
 
        $request->validate([
         'email' => 'required|string|email|',
         'password' =>'required|string|',
        ]);
 
-       if( Auth::guard('buyers')::attempt(['email'=>$request->input('email'),'password'=>$request->input('password')])){
-        return;
+       if( Auth::guard('buyers')::attempt(['email'=>$request->input('email'),'password'=>$request->input('password')]))
+       {
+            return;
        }else{
-           return redirect()->back()->with('flash_message', 'ログインに失敗しました');
+            return redirect()->back()->with('flash_message', 'ログインに失敗しました');
        }
+            return redirect('/TopPage')->with('flash_message', 'ログインしました');
    }
 
    protected function guard()
    {
        return Auth::guard('buyers');
    }
-   
+
    public function logout(Request $request)
    {
        Auth::guard('buyers')->logout();
-       return ;
+       return redirect('/TopPage')->with('flash_message', 'ログアウトしました');
    }
-    
+
 }

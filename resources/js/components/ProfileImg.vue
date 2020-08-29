@@ -1,8 +1,9 @@
 <template>
 <div>
 <li class="p-form--item__file">
-<span class="p-form-text">画像</span>
- <input type="file" placeholder="画像" class="c-file" name="img" value="" ref="file" @change="onFileChange($event)">
+
+
+ <input type="file" class="c-file" name="img" value="" ref="file" @change="onFileChange($event)">
 
 <!--
 プレビュー用
@@ -41,7 +42,7 @@ export default {
         type: Number,
         default:0,
       },
-    Iduser:{//コンビニuserのid
+    Iduser:{//店舗userのid
         type: Number,
         default:0,
       },
@@ -57,6 +58,7 @@ export default {
       userId : this.Iduser,
       userSrc:'https://haiki.s3-us-west-1.amazonaws.com/'+ this.Iduser,
       edit:true,//エディットモード
+
       }
     },
 methods: {
@@ -71,6 +73,7 @@ resetFile: function () {
     this.src = '';
     this.userSrc = '';
     this.edit = false;
+
     },
 
  //------------------------------
@@ -86,12 +89,15 @@ resetFile: function () {
               self.imageData = e.target.result;
           };
           reader.readAsDataURL(file);//画像を読み込み
+
             }
+
         },
      },
 }
 </script>
 <style>
+
 </style>
 
 

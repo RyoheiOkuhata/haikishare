@@ -6,7 +6,7 @@ spメニュー
 ----------------------------------------*/
 
 $(function() {
-  
+
  // SPメニュー
   $('.js-toggle-sp-menu').on('click', function () {
     $(this).toggleClass('active');
@@ -51,3 +51,12 @@ $(function() {
         return false;
     })
 });
+
+
+
+$(function() {
+    var $ftr = $('.l-footer');
+    if( window.innerHeight > $ftr.offset().top + $ftr.outerHeight() ){
+      $ftr.attr({'style': 'position:fixed; top:' + (window.innerHeight - $ftr.outerHeight()) +'px;' });
+    }
+   });

@@ -1,8 +1,7 @@
 <template>
 <div>
 <li class="p-form--item__file">
-<span class="p-form-text">画像</span>
- <input type="file" placeholder="画像" class="c-file" name="img" value="" ref="file" @change="onFileChange($event)">
+ <input type="file" class="c-file" name="img" value="" ref="file" @change="onFileChange($event)">
 
 <!--
 プレビュー用
@@ -23,7 +22,6 @@ DBにすでにデータが入っていた時、表示
     v-bind:class="{displayblock:edit}"
     >
 </li>
-
 
 
   <button v-on:click="resetFile" type="button"
@@ -52,6 +50,8 @@ export default {
       buyerid : this.Idbuyer,
       buyerSrc:'https://haiki.s3-us-west-1.amazonaws.com/'+ this.Idbuyer,
       edit:true,//エディットモード
+
+
       }
     },
 
@@ -66,6 +66,8 @@ resetFile: function () {
     this.imageData = '';//dataを空にする
     this.buyerSrc = '';
     this.edit = false;
+
+
     },
 
  //------------------------------
@@ -81,12 +83,16 @@ resetFile: function () {
               self.imageData = e.target.result;
           };
           reader.readAsDataURL(file);//画像を読み込み
+
             }
+
         },
      },
 }
 </script>
 <style>
+
+
 </style>
 
 

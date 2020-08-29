@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', '品した全ての商品')
+@section('title', '出品した全ての商品')
 @include('nav')
 @section('content')
 @include('users.person')

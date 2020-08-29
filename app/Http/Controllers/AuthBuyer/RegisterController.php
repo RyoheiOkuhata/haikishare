@@ -14,29 +14,22 @@ use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
-    use RegistersUsers;
-    public function guard()
-    {
-    return Auth::guard('buyers');
-    }
-
-
-protected function redirectTo() {
-    session()->flash('flash_message', '新規登録しました');
-    return '/';
-}
-
-
     public function showRegistrationForm (){
         return view('authBuyer.register');
     }
+    use RegistersUsers;
+
+
+
     public function __construct()
     {
         $this->middleware('guest:buyers');
     }
 
-    protected function create(Request $request) {
-      $validData = $this->validate($request, [  
+    protected function create(Request $request) 
+    {
+      $validData = $this->validate($request, 
+      [
         'buyer_name' => 'required|string|max:20|',
         'email' => ['required','string','email','max:255','unique:buyers'],
         'password' => ['required','string',new Hankaku,'min:8','confirmed'],
@@ -51,7 +44,9 @@ protected function redirectTo() {
     Log::debug(print_r( $buyer, true));
     Auth::guard('buyers')->login($buyer);
 
-    return ;
+
+    return redirect('/TopPage')->with('flash_message', '新規登録しました');
+
     }
 
 }

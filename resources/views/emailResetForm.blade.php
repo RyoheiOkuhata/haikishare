@@ -17,7 +17,7 @@
     placeholder="メールアドレス" >
 </li>
 <li class="p-form--item">
-<p class="u-font__size">
+<p class="">
 入力されたメールアドレス宛にメールが届きます。
 リンクにアクセスして変更の完了を行ってください
 </p>

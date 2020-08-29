@@ -1,7 +1,7 @@
 .p-card--item {
   width: calc(25% - 10px);
   text-align: center;
-  height: 180px;
+  height: 200px;
   box-sizing: border-box;
  border: solid 1px $color_default;
   @include mq() {
@@ -21,11 +21,26 @@
  }
   }
 .p-card--txt {
-  margin: $space_m 0; 
+  margin: $space_m 0;
     word-wrap: break-word;
-
-
+    font-size: 20px;
+    display: inline-block;
+    text-align: left;
+}
+.p-card--title {
+margin-top: 20px;
+display: block;
 }
 
+.p-card--article__link {
+    padding: 10px 0;
+    display: block;
+    @include ss(ss) {
+        padding: 5px 0;
+       }
+}
 
-
+.p-card--img {
+    width: 50%;
+    margin: auto;
+}

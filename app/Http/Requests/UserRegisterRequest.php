@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\Hankaku;
+use Illuminate\Validation\Rule;
 
 class UserRegisterRequest  extends FormRequest
 {
@@ -14,7 +15,7 @@ class UserRegisterRequest  extends FormRequest
      */
     public function authorize()
     {
-        return true; 
+        return true;
     }
     /**
      * Get the validation rules that apply to the request.
@@ -28,7 +29,7 @@ class UserRegisterRequest  extends FormRequest
             'prefecture' => ['required','string','max:255'],
             'img' => ['file','image','mimes:jpeg,png,jpg,gif','max:2500'],
             'address' => ['required','string','max:255'],
-            'email' => ['required','string','email','max:255','unique:users'],
+            'email' => ['required','string','email','max:255','deleted_at,NULL'],
             'password' => ['required','string',new Hankaku,'min:8','max:12','confirmed'],
         ];
     }
@@ -48,9 +49,9 @@ class UserRegisterRequest  extends FormRequest
 }
 
 
-        
-        
-   
+
+
+
 
 
 

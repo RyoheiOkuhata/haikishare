@@ -6,8 +6,21 @@
   -moz-border-radius: 50px;
   -webkit-border-radius: 50px;
   -o-border-radius: 50px;
-  -ms-border-radius: 50px; 
+  -ms-border-radius: 50px;
   border-radius: 50px;
+}
+
+.p-image__round-m {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    background: $base-color;
+    -moz-border-radius: 150px;
+    -webkit-border-radius: 150px;
+    -o-border-radius: 150px;
+    -ms-border-radius: 150px;
+    border-radius: 150px;
+
 }
 .p-profile--body {
   display: flex;

@@ -6,7 +6,7 @@
 
     <section class="l-inner--wrapper__m" id="">
       <div class="l-inner l-inner__s">
-       <div class="c-form--title">パスワード用メール送信</div>
+          <div class="c-form--title">パスワード変更</div>
          <div class="l-inner__body">
               <div class="p-login">                  
                     <form method="POST" action="{{ route('buyer_auth.password.update') }}" class="c-form p-form__login" >

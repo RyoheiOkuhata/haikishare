@@ -3,7 +3,6 @@
 @include('nav')
 @section('content')
 @include('buyers.person')
-
   <section class="" id="">
     <div class="l-inner__l">
       <main class="main-wrap">
@@ -14,7 +13,7 @@
                  <div class="l-inner--body">
                    <div class="p-login">
                     @include('errMessage.errMessage')
-                    <form method="POST" action="{{route('buyers.email.update', ['id' =>Auth::guard('buyers')->user()]) }}">
+                    <form method="POST" action="{{route('buyers.email.sendEmail', ['id' =>Auth::guard('buyers')->user()]) }}">
                       @include('emailResetForm')
                   </form>
                         </div>

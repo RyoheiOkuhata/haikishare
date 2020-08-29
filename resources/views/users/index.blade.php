@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'ログイン')
+@section('title', 'マイページ')
 @include('nav')
 @section('content')
 @include('users.person')
@@ -17,11 +17,7 @@
                               <li class="p-card--article">
                                   <a href="{{ route('products.show', ['product_id' => $product->id]) }}">
                                     <div class="p-card--article__img">
-
                                         <img alt="文字表示" src="https://haiki.s3-us-west-1.amazonaws.com/{{$product->img}}">
-
-
-
                                      </div>
                                         <h2 class="p-card--article__txt">
                                              {{$product->product_name}}
@@ -38,7 +34,7 @@
                      <ul class="c-card--list__flex">
                       @foreach($soldOutProducts as $soldOutProduct)
                       <li class="p-card--article">
-                          <a href="{{ route('products.show', ['product_id' => $soldOutProduct->id]) }}">
+                          <a href="{{ route('soldProductDetail', ['product_id' => $soldOutProduct->id]) }}">
                             <div class="p-card--article__img">
                                 <img alt="文字表示" src="https://haiki.s3-us-west-1.amazonaws.com/{{$soldOutProduct->img}}">
                              </div>
@@ -48,7 +44,6 @@
                            </a>
                         </li>
                     @endforeach
-
                        </ul>
                     </div>
               </article>

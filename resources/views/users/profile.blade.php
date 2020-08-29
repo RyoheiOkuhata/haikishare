@@ -3,10 +3,6 @@
 @include('nav')
 @section('content')
 @include('users.person')
-
-
-
-
   <section class="" id="">
     <div class="l-inner__l">
       <main class="main-wrap">
@@ -100,9 +96,26 @@
                       </li>
 
 
+                      <li class="p-form--item">
+                        ひとこと
+
+                    </li>
+                    <li class="p-form--item">
+                      <label for="">
+                        @error('comment')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                       </label>
+                <textarea  name="comment"type="text"  placeholder="300文字以内" class="c-textarea">{{ $user->comment ?? old('comment')}}</textarea>
+                    </li>
+
+
 
                  <li class="p-form--item">
-                    プロフィール画像
+                    プロフィール画像<br>
+                    (ドラッグ&ドロップまたはクリックでアップロード)
                  </li>
                   @error('img')
                       <span class="invalid-feedback" role="alert">

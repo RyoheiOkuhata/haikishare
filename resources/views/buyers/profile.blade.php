@@ -3,10 +3,6 @@
 @include('nav')
 @section('content')
 @include('buyers.person')
-
-
-
-
   <section class="" id="">
     <div class="l-inner__l">
       <main class="main-wrap">
@@ -24,23 +20,39 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-
                     <li class="p-form--item">
-                      <label for="">ユーザー名</label>
+                        ユーザー名
+                        <p class="p-required--wrap ">
+                            <span class="p-required">
+                                必須
+                            </span>
+                        </p>
                     </li>
                         <li class="p-form--item">
                           <input id="buyer_name" type="buyer_name" class="c-text @error('buyer_name') is-invalid @enderror" name="buyer_name" value="{{ $buyer_info->buyer_name?? old('buyer_name') }}" required autocomplete="buyer_name"  placeholder="ユーザー名" >
                         </li>
-
+                        <li class="p-form--item">
+                            ひとこと
+                        </li>
+                        <li class="p-form--item">
+                          <label for="">
+                            @error('comment')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                           </label>
+                    <textarea name="comment"type="text" placeholder="300文字以内" class="c-textarea">{{$buyer_info->comment ?? old('comment')}}</textarea>
+                        </li>
                         @error('img')
                              <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                                 </span>
                         @enderror
-
-                    <li class="p-form--item">
-                      <label for="">プロフィール画像</label>
-                    </li>
+                        <li class="p-form--item">
+                            プロフィール画像<br>
+                            (ドラッグ&ドロップまたはクリックでアップロード)
+                         </li>
                       <profile-buyer-img
                          :Idbuyer='@json([$buyer_info->img])'
                          :Isimg ='@json($is_img)'
@@ -52,7 +64,6 @@
                     </button>
                       </div>
                     </form>
-
                     </div>
                 </div>
                </section>

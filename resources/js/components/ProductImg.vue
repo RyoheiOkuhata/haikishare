@@ -1,9 +1,9 @@
 <template>
 <div>
     <li class="p-form--item__file">
-<span class="p-form-text">画像</span>
 
-    <input type="file" placeholder="画像" class="c-file" name="img" value="" ref="file" @change="onFileChange($event)">
+
+    <input type="file" class="c-file" name="img" value="" ref="file" @change="onFileChange($event)">
 
 <!--
 プレビュー用
@@ -54,6 +54,7 @@ export default {
       edit:false,
       isimg:this.Isimg,
 
+
       }
     },
 methods: {
@@ -67,6 +68,8 @@ resetFile: function () {
     this.imageData = '';//dataを空にする
     this.edit = true;
     this.Isimg = false;
+
+
 
     },
 
@@ -84,6 +87,7 @@ resetFile: function () {
               self.imageData = e.target.result;
           };
           reader.readAsDataURL(file);//画像を読み込み
+
              }
             },
      },

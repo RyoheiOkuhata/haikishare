@@ -1,5 +1,5 @@
 .l-footer {
-  height: 200px;
+  height: 100px;
   background-color: $color_default;
   color: $base-color;
   display: flex;
@@ -7,6 +7,7 @@
   align-items: center;
   text-align:center;
     width: 100%;
+
  &--txt {
     padding: 20px;
   @include mq() {

@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Order extends Model {//ok
+class Order extends Model 
+{//ok
     public function product(): BelongsTo
     {
     return $this->belongsTo('App\Product');

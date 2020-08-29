@@ -13,7 +13,7 @@
 
   <li class="p-form--item">
       <input id="new-password" type="password" class="c-text @error('new-password') is-invalid @enderror" name="new-password" required autocomplete="new-password"  placeholder="パスワード">
-    <label for="" class="u-font__size">
+    <label for="" class="">
       ※半角英数字組み合わせで8文字以上
     </label>
   </li>

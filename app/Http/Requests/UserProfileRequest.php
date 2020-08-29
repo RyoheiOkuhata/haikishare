@@ -14,7 +14,7 @@ class UserProfileRequest  extends FormRequest
      */
     public function authorize()
     {
-        return true; 
+        return true;
     }
     /**
      * Get the validation rules that apply to the request.
@@ -26,6 +26,7 @@ class UserProfileRequest  extends FormRequest
             'shop_name' =>  ['required','string','max:255'],
             'branch_name' =>  ['required','string','max:255'],
             'prefecture' => ['required','string','max:255'],
+            'comment' => ['string','max:300'],
             'img' => ['file','image','mimes:jpeg,png,jpg,gif','max:2500'],
         ];
     }
@@ -37,6 +38,7 @@ class UserProfileRequest  extends FormRequest
         'prefecture' => '都道府県',
         'img' => 'プロフィール',
         'address' => '住所',
+        'comment' =>'ひとこと',
     ];
 }
 
@@ -44,9 +46,9 @@ class UserProfileRequest  extends FormRequest
 }
 
 
-        
-        
-   
+
+
+
 
 
 

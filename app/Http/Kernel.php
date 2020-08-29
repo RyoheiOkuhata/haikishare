@@ -64,8 +64,9 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'remember_me_handler' => \App\Http\Middleware\RememberMeHandler::class,
         'buyer_auth_check' => \App\Http\Middleware\CheckLoggedIn::class,
+        'user_check' => \App\Http\Middleware\CheckUser::class,
     ];
-
+    
     /**
      * The priority-sorted list of middleware.
      *

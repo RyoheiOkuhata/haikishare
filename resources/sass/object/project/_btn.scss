@@ -16,7 +16,7 @@
   color:$color_sub;
   padding:$space_s $font-size_s;
   border:none;
-  cursor: grab;
+  cursor: pointer;
 }
 .p-btn--go {
   background-color: $color_sub;
@@ -56,7 +56,7 @@
     background-color: $color_default;
     color: $color_sub;
     width: 100%;
-    padding: $font-size_l;
+    padding: $space_l;
 
   }
 
@@ -72,3 +72,7 @@
     font-size:$font-size_s;
   }
   }
+
+
+
+

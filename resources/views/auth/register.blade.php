@@ -19,7 +19,7 @@
                     @csrf
                   <ul class="">
                  @error('shop_name')
-                    <label class="" role="alert">
+                    <label class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </label>
                 @enderror

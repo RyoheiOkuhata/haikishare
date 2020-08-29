@@ -1,5 +1,10 @@
 .u-font__size {
+font-size:40px;
 @include mq() {
   font-size:10px;
   }
+}
+
+.u-font__size-s {
+    font-size:12px;
 }

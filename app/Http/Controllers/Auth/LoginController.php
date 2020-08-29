@@ -30,14 +30,14 @@ class LoginController extends Controller
 
     protected function redirectTo() {
         session()->flash('flash_message', 'ログインしました');
-        return '/';
+        return '/TopPage';
     }
 
     protected function loggedOut(Request $request)
     {
-        redirect()->route('products.index')->with('flash_message', 'ログアウトしました');
+        redirect('/TopPage')->with('flash_message', 'ログアウトしました');
     }
-    
+
 
     /**
      * Create a new controller instance.

@@ -59,7 +59,6 @@ button:hover {
 }
 
 input,textarea {
-   cursor: grab;
   resize: none;
   appearance: none;
   outline: none;
@@ -68,7 +67,6 @@ input,textarea {
   }
 select {
     -webkit-appearance: none;
-   cursor: grab;
   resize: none;
   outline: none;
   border: none;

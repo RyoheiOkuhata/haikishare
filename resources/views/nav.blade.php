@@ -82,7 +82,7 @@
           <a href="{{ route('buyers.index',['id' =>Auth::guard('buyers')->user()])}}" class="u-font--color_sub">マイページ</a>
           <ul class="sub">
             <li class="p-menu--item">
-              <a href="{{ route('buyers.show',['id' =>Auth::guard('buyers')->user()])}}" class="u-font--color_sub">プロフィール</a>
+              <a href="{{ route('buyers.profile',['id' =>Auth::guard('buyers')->user()])}}" class="u-font--color_sub">プロフィール</a>
             </li>
             <li class="p-menu--item">
               <a class="p-menu--item" href="{{ route('buyer_auth.logout')}}"
@@ -107,7 +107,7 @@
        </a>
     </li>
       <li class="p-nav--item">
-     <a href="{{ route('buyers.show',['product_id' => Auth::guard('buyers')->user()])}}"class="p-nav--link">
+     <a href="{{ route('buyers.profile',['product_id' => Auth::guard('buyers')->user()])}}"class="p-nav--link">
 
           プロフィール編集
                 <i class="fas fa-chevron-right"></i>

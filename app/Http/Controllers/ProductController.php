@@ -37,6 +37,7 @@ public function PostImg(Request $request, Product $product){
         $product->product_name = $request->product_name;
         $product->expiration_date = $request->expiration_date;
         $product->price= $request->price;
+        $product->comment= $request->comment;
         $product->user_id = $request->user()->id;
         //DBに保存するパスを指定する
         return $product;
@@ -79,7 +80,7 @@ public function index(Request $request) {
     }
 
     //それぞれの条件に合ったプロパティが$queryに入る
-    $products = $query->paginate(10);
+    $products = $query->paginate(12);
     return view('products.index', [
     'products' => $products,
     'prefs' => $prefs,
@@ -124,11 +125,17 @@ return redirect()->route('users.index', ['id' => Auth::user()])->with('flash_mes
 //----------------------------------------
 public function show(Product $product){
 //この商品は購入されているかどうかのチェック。boolean型で返す
+
     $order = (bool)$product->orderBuyer()->count();
    //Log::debug(print_r($order, true));
+   $user = $product->user;
+
+
     return view('products.show', [
         'product' => $product,
         'order' =>$order,
+        'user'  =>$user,
+
         ]);
     }
 //----------------------------------------
@@ -148,10 +155,11 @@ return view('products.edit', [
  public function update(Request $request, product $product) {
      if(isset($product->img)) {//編集の時はimgのrequiredは外す
         $request->validate([
-        'product_name' => ['required','max:20'],
+        'product_name' => 'required|max:20',
         'expiration_date' => 'required|date_format:"Y-m-d"|',
-        'price' => 'required|numeric|',
-        'img' => 'file|image|mimes:jpeg,png,jpg,gif|max:2048'
+        'price' => 'required|numeric|min:0',
+        'comment' => ['string','max:300'],
+        'img' => 'file|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
      }
 

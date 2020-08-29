@@ -13,8 +13,11 @@
                <h2 class="p-card--gallery__txt">
                     {{$product->product_name}}
                 </h2>
+                <h2 class="p-card--gallery__txt">
+                    ¥{{$product->price}}
+                </h2>
             </a>
             <p class="p-card--gallery__under">
-                  {{$product->user->shop_name}}
+                  {{$product->user->prefecture}}
            </p>
 </li>

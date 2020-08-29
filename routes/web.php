@@ -2,44 +2,49 @@
 Auth::routes();
 
 
-Route::get('/welcome', function () {return view('welcome');});
+//---------------------------------------
+//welcome
+//---------------------------------------
+Route::get('/', function () {return view('welcome');});
 
 //---------------------------------------
 //productController
 //---------------------------------------
 Route::resource('/products', 'ProductController')->except(['index', 'show'])->middleware('auth');
-Route::get('/', 'ProductController@index')->name('products.index');
+Route::get('/TopPage', 'ProductController@index')->name('products.index');
 Route::resource('/products', 'ProductController')->only(['show']);
 
+//---------------------------------------
+//詳細
+//---------------------------------------
+Route::get('/userProfileDetail/{id}', 'UserController@profileDetail')->name('userProfileDetail');
+Route::get('/buyerProfileDetail/{id}','BuyerController@profileDetail')->name('buyerProfileDetail');
+Route::get('/soldProductDetail/{id}','UserController@soldProductDetail')->name('soldProductDetail')->middleware('user_check');;
 
 //---------------------------------------
 //users
 //---------------------------------------
 Route::prefix('users')->name('users.')->group(function () {
-    Route::get('/person/{id}', 'UserController@person')->name('person')->middleware('auth');
-    Route::get('/profile/{id}', 'UserController@profile')->name('profile')->middleware('auth');
-    Route::post('/update/{id}', 'UserController@update')->name('update')->middleware('auth');
-    Route::post('/{id}', 'UserController@confirmGive')->name('confirmGive')->middleware('auth');
-    Route::get('/{id}/confirmGet', 'UserController@confirmGet')->name('confirmGet')->middleware('auth');
-    Route::post('/{id}/done', 'UserController@done')->name('done')->middleware('auth');
-    Route::get('/{id}/index', 'UserController@index')->name('index')->middleware('auth');
-    Route::get('/onSellProduct/{id}.','UserController@onSellProduct')->name('onSellProducts')->middleware('auth');
-    Route::get('soldProduct/{id}', 'UserController@soldProduct')->name('soldProducts')->middleware('auth');
+    Route::get('/person/{id}', 'UserController@person')->name('person')->middleware('user_check');
+    Route::get('/{id}/index', 'UserController@index')->name('index')->middleware('user_check');
+    Route::get('/onSellProduct/{id}.','UserController@onSellProduct')->name('onSellProducts')->middleware('user_check');
+    Route::get('soldProduct/{id}', 'UserController@soldProduct')->name('soldProducts')->middleware('user_check');
+    Route::get('/profile/{id}', 'UserController@profile')->name('profile')->middleware('user_check');
+    Route::post('/update/{id}', 'UserController@update')->name('update')->middleware('user_check');
     //email表示
-    Route::get('email/reset/{id}', 'UserController@emailReset')->name('email.reset')->middleware('auth');
-    //emailメール送信
-    Route::post('email/reset/{id}', 'UserController@emailUpdate')->name('email.update')->middleware('auth');
+    Route::get('email/reset/{id}', 'UserController@emailReset')->name('email.reset')->middleware('user_check');
+    //確認emailメール送信
+    Route::post('email/reset/{id}', 'UserController@emailResetSendEmail')->name('email.sendemail')->middleware('user_check');
     //完了
-    Route::get("reset/{token}", "UserController@reset")->middleware('auth');
+    Route::get("reset/{token}", "UserController@emailUpdate")->middleware('user_check');
     //password表示
-    Route::get("password/reset/{id}", "UserController@passwordReset")->name('password.reset')->middleware('auth');
+    Route::get("password/reset/{id}", "UserController@passwordReset")->name('password.reset')->middleware('user_check');
     //完了
-    Route::post("password/update/{id}", "UserController@passwordUpdate")->name('password.update')->middleware('auth');
+    Route::post("password/update/{id}", "UserController@passwordUpdate")->name('password.update')->middleware('user_check');
 });
 //---------------------------------------
 //buyerAuthController
 //---------------------------------------
-
 Route::group(['prefix' => 'buyers'], function () {
     Route::get('register', 'AuthBuyer\RegisterController@showRegistrationForm')
     ->name('buyer_auth.register');
@@ -68,35 +73,31 @@ Route::group(['prefix' => 'buyers'], function () {
 //-------------------------------------
 //buyerController
 //---------------------------------------
-//buyer_auth_check
-
 Route::prefix('buyers')->name('buyers.')->group(function () {
     //バイヤーマイーぺージ
-    Route::get('{id}/index', 'BuyerController@index')->name('index')->middleware('buyer_auth_check');
+    Route::get('index/{id}', 'BuyerController@index')->name('index')->middleware('buyer_auth_check');
     //プロフィールぺージ
-    Route::get('{id}', 'BuyerController@show')->name('show')->middleware('buyer_auth_check');
+    Route::get('profile/{id}', 'BuyerController@profile')->name('profile')->middleware('buyer_auth_check');
     //プロフィールぺージ更新
-    Route::post('{id}', 'BuyerController@update')->name('update')->middleware('buyer_auth_check');
-    //プロフィールメールリセットメール送信画面
+    Route::post('profile/{id}', 'BuyerController@update')->name('update')->middleware('buyer_auth_check');
+    //メールリセットメール送信画面
     Route::get('email/profile/reset/{id}', 'BuyerController@emailReset')->name('email.reset')->middleware('buyer_auth_check');
-   //プロフィールメールリセットメール送信
-    Route::post("email/profile/reset/{id}", "BuyerController@emailUpdate")->name('email.update')->middleware('buyer_auth_check');
-   //プロフィールメールリセットメール完了
-    Route::get("reset/{token}", "BuyerController@reset")->middleware('buyer_auth_check');
-    //プロフィールパスワードリセット
+   //メールリセットメール送信
+    Route::post("email/profile/reset/{id}", "BuyerController@emailResetSendEmail")->name('email.sendEmail')->middleware('buyer_auth_check');
+   //メールリセットメール完了
+    Route::get("reset/{token}", "BuyerController@emailUpdate")->middleware('buyer_auth_check');
+    //パスワードリセット
     Route::get("password/profile/reset/{id}", "BuyerController@passwordReset")->name('password.reset')->middleware('buyer_auth_check');
-    //プロフィールパスワードリセット完了
+    //パスワードリセット完了
     Route::post("password/profile/reset/{id}", "BuyerController@passwordUpdate")->name('password.update')->middleware('buyer_auth_check');
     });
-
 
 //---------------------------------------
 //order
 //---------------------------------------
 Route::prefix('orders')->name('orders.')->group(function () {
-    Route::post('/{id}', 'OrderController@confirmGive')->name('confirmGive')->middleware('buyer_auth_check');
-    Route::get('/{id}/confirmGet', 'OrderController@confirmGet')->name('confirmGet')->middleware('buyer_auth_check');
-    Route::post('/{id}/done', 'OrderController@done')->name('done')->middleware('buyer_auth_check');
+    Route::get('confirm/{id}', 'OrderController@confirmShow')->name('confirmShow');
+    Route::post('orderDone/{id}', 'OrderController@orderDone')->name('done');
 });
 
 

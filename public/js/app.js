@@ -1936,6 +1936,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {},
   props: {
@@ -2313,8 +2321,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     Idbuyer: {
@@ -2420,6 +2426,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     Id: {
@@ -2427,7 +2434,7 @@ __webpack_require__.r(__webpack_exports__);
       "default": 0
     },
     Iduser: {
-      //コンビニuserのid
+      //店舗userのid
       type: Number,
       "default": 0
     },
@@ -14867,12 +14874,10 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("li", { staticClass: "p-form--item__file" }, [
-      _c("span", { staticClass: "p-form-text" }, [_vm._v("画像")]),
-      _vm._v(" "),
       _c("input", {
         ref: "file",
         staticClass: "c-file",
-        attrs: { type: "file", placeholder: "画像", name: "img", value: "" },
+        attrs: { type: "file", name: "img", value: "" },
         on: {
           change: function($event) {
             return _vm.onFileChange($event)
@@ -14929,12 +14934,10 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("li", { staticClass: "p-form--item__file" }, [
-      _c("span", { staticClass: "p-form-text" }, [_vm._v("画像")]),
-      _vm._v(" "),
       _c("input", {
         ref: "file",
         staticClass: "c-file",
-        attrs: { type: "file", placeholder: "画像", name: "img", value: "" },
+        attrs: { type: "file", name: "img", value: "" },
         on: {
           change: function($event) {
             return _vm.onFileChange($event)
@@ -14993,12 +14996,10 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("li", { staticClass: "p-form--item__file" }, [
-      _c("span", { staticClass: "p-form-text" }, [_vm._v("画像")]),
-      _vm._v(" "),
       _c("input", {
         ref: "file",
         staticClass: "c-file",
-        attrs: { type: "file", placeholder: "画像", name: "img", value: "" },
+        attrs: { type: "file", name: "img", value: "" },
         on: {
           change: function($event) {
             return _vm.onFileChange($event)
@@ -31113,6 +31114,15 @@ $(function () {
     $('.js-modal').fadeOut();
     return false;
   });
+});
+$(function () {
+  var $ftr = $('.l-footer');
+
+  if (window.innerHeight > $ftr.offset().top + $ftr.outerHeight()) {
+    $ftr.attr({
+      'style': 'position:fixed; top:' + (window.innerHeight - $ftr.outerHeight()) + 'px;'
+    });
+  }
 });
 
 /***/ }),

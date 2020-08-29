@@ -1,7 +1,7 @@
 
 
 @if(Auth::guard('web')->user())
-<aside class="l-sidebar"> 
+<aside class="l-sidebar">
   <li class="l-sidebar--list">
     <a href="{{route('users.index', ['id' => Auth::user()]) }}" class="c-sidebar">
       マイページTop
@@ -12,7 +12,7 @@
     <a href="{{ route('products.create')}}" class="c-sidebar">
       商品を出品する
 
-    </a>  
+    </a>
   </li>
   <li class="l-sidebar--list">
     <a href="{{route('users.onSellProducts', ['id' => Auth::user()]) }}" class="c-sidebar">
@@ -41,36 +41,37 @@
     <li class="l-sidebar--list">
     <a href="{{route('users.password.reset', ['id' => Auth::user()])}}" class="c-sidebar">
       パスワード
-
     </a>
   </li>
+
+
 </aside>
 @elseif (Auth::guard('buyers')->user())
-<aside class="l-sidebar"> 
+<aside class="l-sidebar">
 
   <li class="l-sidebar--list">
     <a href="{{ route('buyers.index',['id' => Auth::guard('buyers')->user()])}}" class="c-sidebar">
       買った商品
 
-    </a>  
-  </li>
+    </a>
+  </li> 
   <li class="l-sidebar--list">
-    <a href="{{ route('buyers.show',['id' => Auth::guard('buyers')->user()])}}" class="c-sidebar">
+    <a href="{{ route('buyers.profile',['id' => Auth::guard('buyers')->user()])}}" class="c-sidebar">
       プロフィール
 
-    </a>  
+    </a>
   </li>
     <li class="l-sidebar--list">
     <a href="{{ route('buyers.email.reset',['id' => Auth::guard('buyers')->user()])}}" class="c-sidebar">
       メールアドレス
 
-    </a>  
+    </a>
   </li>
     <li class="l-sidebar--list">
     <a href="{{ route('buyers.password.reset',['id' => Auth::guard('buyers')->user()])}}" class="c-sidebar">
       パスワード
 
-    </a>  
+    </a>
   </li>
 
   <li class="l-sidebar--list">
@@ -80,8 +81,8 @@
    <form id="logout-form" action="{{ route('buyer_auth.logout')}}" method="POST" style="display:none;">
      @csrf
   </form>
-
   </li>
+
 </aside>
 
 
