@@ -33,10 +33,12 @@ class LoginController extends Controller
         return '/TopPage';
     }
 
+
     protected function loggedOut(Request $request)
-    {
-        redirect('/TopPage')->with('flash_message', 'ログアウトしました');
-    }
+{
+    session()->flash('flash_message', 'ログアウトしました');
+    return '/TopPage';
+}
 
 
     /**
