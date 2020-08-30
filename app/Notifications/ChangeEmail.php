@@ -27,7 +27,7 @@ class ChangeEmail extends Notification
             ->view('mails.changeEmail') // メールテンプレートの指定
             ->action(
                 'メールアドレス変更',
-                url('users/reset', $this->token) //アクセスするURL
+                url('users/emailUpdate', $this->token) //アクセスするURL
             );
     }
 }

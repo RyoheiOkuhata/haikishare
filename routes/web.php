@@ -36,7 +36,7 @@ Route::prefix('users')->name('users.')->group(function () {
     //確認emailメール送信
     Route::post('email/reset/{id}', 'UserController@emailResetSendEmail')->name('email.sendemail')->middleware('user_check');
     //完了
-    Route::get("reset/{token}", "UserController@emailUpdate")->middleware('user_check');
+    Route::get("emailUpdate/{token}", "UserController@emailUpdate")->middleware('user_check');
     //password表示
     Route::get("password/reset/{id}", "UserController@passwordReset")->name('password.reset')->middleware('user_check');
     //完了
@@ -85,7 +85,7 @@ Route::prefix('buyers')->name('buyers.')->group(function () {
    //メールリセットメール送信
     Route::post("email/profile/reset/{id}", "BuyerController@emailResetSendEmail")->name('email.sendEmail')->middleware('buyer_auth_check');
    //メールリセットメール完了
-    Route::get("reset/{token}", "BuyerController@emailUpdate")->middleware('buyer_auth_check');
+    Route::get("emailUpdate/{token}", "BuyerController@emailUpdate")->middleware('buyer_auth_check');
     //パスワードリセット
     Route::get("password/profile/reset/{id}", "BuyerController@passwordReset")->name('password.reset')->middleware('buyer_auth_check');
     //パスワードリセット完了
