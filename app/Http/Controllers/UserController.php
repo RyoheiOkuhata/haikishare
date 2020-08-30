@@ -234,7 +234,7 @@ if ($email_resets && !$this->tokenExpired($email_resets->created_at))
     DB::table('email_resets')
         ->where('token', $token)
         ->delete();
-        return redirect('/TopPage')->with('flash_message', 'メールアドレスの更新が完了しました');
+        return redirect()->route('products.index')->with('flash_message', 'パスワードを変更しました');
 }else{
 
     if ($email_resets) {// レコードが存在していた場合削除
