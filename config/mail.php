@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
 
 
 
@@ -75,7 +75,7 @@ return [
 
     'encryption' => env('MAIL_ENCRYPTION', 'tls'),
     'username' => env('rassaraway1213@gmail.com'),
-    'password' => env('lcedxgvfcugfbwxh'),
+    'password' => env('2bhk1118'),
 
 
     /*
@@ -89,9 +89,9 @@ return [
     |
     */
 
-    'username' => env('rassaraway1213@gmail.com'),
+    'username' => env('MAIL_USERNAME'),
 
-    'password' => env('lcedxgvfcugfbwxh'),
+    'password' => env('MAIL_PASSWORD'),
 
     /*
     |--------------------------------------------------------------------------
