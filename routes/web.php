@@ -84,7 +84,7 @@ Route::prefix('buyers')->name('buyers.')->group(function () {
    //メールリセットメール送信
     Route::post("email/profile/reset/{id}", "BuyerController@emailResetSendEmail")->name('email.sendEmail')->middleware('buyer_auth_check');
    //メールリセットメール完了
-    Route::get("emailUpdate/{token}", "BuyerController@emailUpdate");
+    Route::get("emailUpdate{token}", "BuyerController@emailUpdate");
     //パスワードリセット
     Route::get("password/profile/reset/{id}", "BuyerController@passwordReset")->name('password.reset')->middleware('buyer_auth_check');
     //パスワードリセット完了
