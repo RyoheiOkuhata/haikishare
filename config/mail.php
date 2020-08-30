@@ -75,7 +75,7 @@ return [
 
     'encryption' => env('MAIL_ENCRYPTION', 'tls'),
     'username' => env('rassaraway1213@gmail.com'),
-    'password' => env('2bhk1118'),
+    'password' => env('izvttgduddmnvfpi'),
 
 
     /*
