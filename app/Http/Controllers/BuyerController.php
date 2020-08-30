@@ -18,12 +18,12 @@ class BuyerController extends Controller {
 //----------------------------------------
 //バイヤーのマイページ
 //----------------------------------------
-public function index(int $id) 
+public function index(int $id)
 {
     $buyer = Buyer::where('id', $id)->first();
     //バイヤーと商品を紐ずけた中間テーブルから値を取得
     $products = $buyer->orderProduct()->paginate(10);
-    return view('buyers.index', 
+    return view('buyers.index',
     [
         'buyer_info' => $buyer,
         'products' => $products,
@@ -32,10 +32,10 @@ public function index(int $id)
 //----------------------------------------
 //プロフィール画面
 //----------------------------------------
-public function profile(int $id) 
+public function profile(int $id)
 {
     $buyer = Buyer::where('id', $id)->first();
-    return view('buyers.profile', 
+    return view('buyers.profile',
     [
         'buyer_info' => $buyer,
     ]);
@@ -43,10 +43,10 @@ public function profile(int $id)
 //----------------------------------------
 //プロフィール詳細画面
 //----------------------------------------
-public function profileDetail(int $id) 
+public function profileDetail(int $id)
 {
     $buyer = Buyer::where('id', $id)->first();
-    return view('buyers.profileDetail', 
+    return view('buyers.profileDetail',
     [
         'buyer' => $buyer,
     ]);
@@ -55,7 +55,7 @@ public function profileDetail(int $id)
 //----------------------------------------
 //更新
 //----------------------------------------
-public function update(Request $request,int $id) 
+public function update(Request $request,int $id)
 {
     $request->validate
     ([
@@ -65,12 +65,12 @@ public function update(Request $request,int $id)
     $buyer = Buyer::where('id', $id)->first();
     $buyer->buyer_name = $request->buyer_name;
     $buyer->comment = $request->comment;
-     //s3を使わない時   
+     //s3を使わない時
     //if(!empty($request->img)) {
     //   Storage::delete('public/buyerProfile_images', $buyer->id . '.jpg');
     //   $buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg',);
     //}
-    if (!empty($request->img)) 
+    if (!empty($request->img))
     {
         Storage::delete('public/buyerProfile_images', $buyer->img);
         //s3を使わない時
@@ -102,7 +102,7 @@ $request->validate
         'email' => ['required','string','email','max:255',Rule::unique('buyers')->ignore($buyer->id)],
     ]);
 
-    if  ($request->email=== $buyer->email) 
+    if  ($request->email=== $buyer->email)
     {
         return redirect()->back()->with('flash_message--failure', 'メールアドレスに変更がありません');
 
@@ -125,7 +125,7 @@ $request->validate
             $email_reset = EmailReset::create($param);
             DB::commit();
             $email_reset->BuyersendEmailResetNotification($token);
-    }catch(\Exception $e) 
+    }catch(\Exception $e)
     {
         return redirect()->back()->with('flash_message--failure ', 'メール送信に失敗しました。もう一度やり直してください');
     }
@@ -143,7 +143,7 @@ public function emailUpdate(Request $request, $token)
         ->first();
 
     // トークンが存在している、かつ、有効期限が切れていないかチェック
-    if ($email_resets && !$this->tokenExpired($email_resets->created_at)) 
+    if ($email_resets && !$this->tokenExpired($email_resets->created_at))
     {
         // ユーザーのメールアドレスを更新
         $user = Buyer::find($email_resets->user_id);
@@ -154,7 +154,7 @@ public function emailUpdate(Request $request, $token)
             ->where('token', $token)
             ->delete();
 
-        return redirect()->back()->with('flash_message--success', 'メールアドレスの更新が完了しました');
+            return redirect()->route('products.index')->with('flash_message', 'パスワードを変更しました');
     }else{
         // レコードが存在していた場合削除
     if  ($email_resets) {
@@ -162,7 +162,7 @@ public function emailUpdate(Request $request, $token)
                 ->where('token', $token)
                 ->delete();
         }
-        return redirect()->back()->with('flash_message--failure', 'メールアドレスの更新に失敗しました。もう一度やり直してください');
+        return redirect()->back()->with('flash_message', 'メールアドレスの更新に失敗しました。もう一度やり直してください');
 
     }
 }
@@ -193,12 +193,12 @@ public function passwordUpdate(Request $request,int $id)
 {
     $user = Buyer::where('id', $id)->first();
     //現在のパスワードが正しいかを調べる
-    if (!(Hash::check($request->get('current-password'), $user->password))) 
+    if (!(Hash::check($request->get('current-password'), $user->password)))
     {
         return redirect()->back()->with('flash_message--failure', '現在のパスワードが違います');
     }
     //現在のパスワードと新しいパスワードが違っているかを調べる
-    if (strcmp($request->get('current-password'), $request->get('new-password')) === 0) 
+    if (strcmp($request->get('current-password'), $request->get('new-password')) === 0)
     {
         return redirect()->back()->with('flash_message--failure', '現在のパスワードと新しいパスワードが同じです');
     }
