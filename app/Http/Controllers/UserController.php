@@ -28,9 +28,9 @@ public function index(int $id)
     $soldOutProducts = $user->soldProduct;
     //hasmanythroughでusers->products->ordersテーブルをまたいでアクセス。売れた商品を取得
 
-    if  (!empty($soldOutProducts)) 
+    if  (!empty($soldOutProducts))
     {
-            foreach ($soldOutProducts as $soldOutProduct) 
+            foreach ($soldOutProducts as $soldOutProduct)
         {
             $product_id[] = $soldOutProduct->product_id;//ordersテーブルのproduct_idカラムを全て取得
         }if  (!empty($product_id))
@@ -42,7 +42,7 @@ public function index(int $id)
             //productsテーブルのからproduct_id[]の値を元に取得
         }
     }
-        return view('users.index', 
+        return view('users.index',
     [
         'products' => $products,
         'user' => $user,
@@ -60,7 +60,7 @@ public function onSellProduct(int $id)
     $products = $user->products()->paginate(10);
     //user情報をもとに商品を取得
 
-    return view('users.onSellProducts', 
+    return view('users.onSellProducts',
     [
         'user' => $user,
         'products' => $products,
@@ -69,7 +69,7 @@ public function onSellProduct(int $id)
 //----------------------------------------
 //売れた商品
 //----------------------------------------
-public function soldProduct($id) 
+public function soldProduct($id)
 {
     $user = User::where('id', $id)->first();
     //ユーザー情報
@@ -77,19 +77,19 @@ public function soldProduct($id)
     //hasmanythroughでusers->products->ordersテーブルにアクセス。
     //ユーザーが出品した商品で売れたものをとる
 
-    if(!empty($soldOutProducts)) 
+    if(!empty($soldOutProducts))
     {
-        foreach ($soldOutProducts as $soldOutProduct) 
+        foreach ($soldOutProducts as $soldOutProduct)
         {
            $product_id[] = $soldOutProduct->product_id;
         }
-     if(!empty($product_id)) 
+     if(!empty($product_id))
         {
             //ordersテーブルから売れた商品のproduct_idを取得
-            $soldOutProducts = Product::whereIn('id',$product_id)->paginate(10);  
+            $soldOutProducts = Product::whereIn('id',$product_id)->paginate(10);
         }
     }
-    return view('users.soldProducts', 
+    return view('users.soldProducts',
     [
         'soldOutProducts' => $soldOutProducts,
         'user' => $user
@@ -103,7 +103,7 @@ public function profile(int $id)
     $user = User::where('id', $id)->first();
     $prefs = config('prefectures');
 
-    return view('users.profile', 
+    return view('users.profile',
     [
         'user' => $user,
         'prefs' => $prefs,
@@ -118,7 +118,7 @@ public function profileDetail(int $id)
     $products = $user->products()->orderBy('id', 'DESC')->paginate(10);
     $prefs = config('prefectures');
 
-    return view('users.userProfileDetail', 
+    return view('users.userProfileDetail',
     [
         'user' => $user,
         'prefs' => $prefs,
@@ -132,7 +132,7 @@ public function  soldProductDetail(int $id)
 {
     $product = Product::where('id', $id)->first();
     $buyer = $product->orderBuyer()->first();
-    return view('users.soldProductDetail', 
+    return view('users.soldProductDetail',
     [
         'buyer' => $buyer,
         'product' => $product,
@@ -143,7 +143,7 @@ public function  soldProductDetail(int $id)
 //ユーザープロフィール編集
 //----------------------------------------
 // GETパラメータが数字かどうかをチェックする
-public function update(UserProfileRequest $request, int $id) 
+public function update(UserProfileRequest $request, int $id)
 {
     $user = User::where('id', $id)->first();
     $user->shop_name = $request->shop_name;
@@ -153,7 +153,7 @@ public function update(UserProfileRequest $request, int $id)
     ->address;
     $user->comment = $request->comment;
 
-if (!empty($request->img)) 
+if (!empty($request->img))
 {
     Storage::delete('public/buyerProfile_images', $user->img);
     //$buyer->img = $request->img->storeAs('public/buyerProfile_images', $buyer->id . '.jpg', 's3');
@@ -170,7 +170,7 @@ public function emailReset(int $id)
     $user = User::where('id', $id)->first();
     $prefs = config('prefectures');
 
-    return view('users.emailReset', 
+    return view('users.emailReset',
         [
             'user' => $user,
             'prefs' => $prefs,
@@ -186,8 +186,8 @@ public function emailResetSendEmail(Request $request,int $id)
     [
     'email' => ['required','string','email','max:255',Rule::unique('users')->ignore($user->id)],
     ]);
-    
-    if($request->email=== $user->email) 
+
+    if($request->email=== $user->email)
     {
         return redirect()->back()->with('flash_message--failure', 'メールアドレスに変更がありません');
     }else{
@@ -277,12 +277,12 @@ public function passwordUpdate(Request $request,int $id)
 
 $user = User::where('id', $id)->first();
 //現在のパスワードが正しいかを調べる
-if (!(Hash::check($request->get('current-password'), Auth::user()->password))) 
+if (!(Hash::check($request->get('current-password'), Auth::user()->password)))
 {
     return redirect()->back()->with('flash_message--failure', '現在のパスワード違います');
 }
 //現在のパスワードと新しいパスワードが違っているかを調べる
-if (strcmp($request->get('current-password'), $request->get('new-password')) == 0) 
+if (strcmp($request->get('current-password'), $request->get('new-password')) == 0)
 {
     return redirect()->back()->with('flash_message--failure', '現在のパスワードと新しいパスワードが同じです');
 }
@@ -294,7 +294,7 @@ if (strcmp($request->get('current-password'), $request->get('new-password')) == 
     $user->password= Hash::make($request->get('new-password'));
     $user->save();
 
-    return redirect('TopPage')->with('flash_message--success', 'パスワードを変更しました。次回から新しいパスワードでログインできます。');
+    return redirect()->back()->with('flash_message--success', 'パスワードを変更しました。次回から新しいパスワードでログインできます。');
 }
 
 }
