@@ -41,8 +41,8 @@
             <h1 class="c-main--title">購入する商品</h1>
              </div>
         <div class="c-card--title">{{$product->product_name}}</div>
-<ul class="">
-<ul class="">
+
+<ul class="u-center">
     <li class="">
        <div class="p-card--img">
          <img alt="文字表示" src="https://haiki.s3-us-west-1.amazonaws.com/{{$product->img}}">

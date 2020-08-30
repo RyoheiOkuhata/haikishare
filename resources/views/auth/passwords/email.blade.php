@@ -2,6 +2,7 @@
 @section('title', 'パスワード変更')
 @include('nav')
 @section('content')
+@include('stateMessage')
 
     <section class="l-inner--wrapper__m" id="">
         @include('errMessage.errMessage')
