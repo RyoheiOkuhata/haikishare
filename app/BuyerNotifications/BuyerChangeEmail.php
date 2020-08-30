@@ -29,7 +29,7 @@ class BuyerChangeEmail extends Notification
             ->view('mails.changeEmail') // メールテンプレートの指定
             ->action(
                 'メールアドレス変更',
-                url('buyers/emailUpdate', $this->token) //アクセスするURL
+                url('buyers/emailUpdate/', $this->token) //アクセスするURL
             );
     }
 

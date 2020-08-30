@@ -36,7 +36,7 @@ Route::prefix('users')->name('users.')->group(function () {
     //確認emailメール送信
     Route::post('email/reset/{id}', 'UserController@emailResetSendEmail')->name('email.sendemail')->middleware('user_check');
     //完了
-    Route::get("emailUpdate/{token}", "UserController@emailUpdate")->middleware('user_check');
+    Route::get("emailUpdate/{token}", "UserController@emailUpdate");
     //password表示
     Route::get("password/reset/{id}", "UserController@passwordReset")->name('password.reset')->middleware('user_check');
     //完了
@@ -63,8 +63,7 @@ Route::group(['prefix' => 'buyers'], function () {
     Route::post('password/email', 'AuthBuyer\ForgotPasswordController@sendResetLinkEmail')
     ->name('buyer_auth.password.email');
     //パスワードリセット用確定画面
-    Route::get('password/reset/{token}', 'AuthBuyer\ResetPasswordController@showResetForm')
-    ->name('buyer_auth.password.reset');
+    Route::get('password/reset/{token}', 'AuthBuyer\ResetPasswordController@showResetForm');
     //パスワードリセット用確定
     Route::post('password/reset', 'AuthBuyer\ResetPasswordController@reset')
     ->name('buyer_auth.password.update');
@@ -85,7 +84,7 @@ Route::prefix('buyers')->name('buyers.')->group(function () {
    //メールリセットメール送信
     Route::post("email/profile/reset/{id}", "BuyerController@emailResetSendEmail")->name('email.sendEmail')->middleware('buyer_auth_check');
    //メールリセットメール完了
-    Route::get("emailUpdate/{token}", "BuyerController@emailUpdate")->middleware('buyer_auth_check');
+    Route::get("emailUpdate/{token}", "BuyerController@emailUpdate");
     //パスワードリセット
     Route::get("password/profile/reset/{id}", "BuyerController@passwordReset")->name('password.reset')->middleware('buyer_auth_check');
     //パスワードリセット完了
