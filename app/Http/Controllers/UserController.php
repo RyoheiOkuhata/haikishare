@@ -234,7 +234,7 @@ if ($email_resets && !$this->tokenExpired($email_resets->created_at))
     DB::table('email_resets')
         ->where('token', $token)
         ->delete();
-        return redirect()->back()->with('flash_message--success', 'メールアドレスの更新が完了しました');
+        return redirect('/TopPage')->with('stateMessage', 'メールアドレスの更新が完了しました');
 }else{
 
     if ($email_resets) {// レコードが存在していた場合削除
@@ -242,7 +242,7 @@ if ($email_resets && !$this->tokenExpired($email_resets->created_at))
             ->where('token', $token)
             ->delete();
     }
-    return redirect()->back()->with('flash_message--failure', 'メールアドレスの更新に失敗しました。もう一度やり直してください');
+    return redirect('/TopPage')->with('stateMessage', 'メールアドレスの更新に失敗しました。もう一度やり直してください');
 }
 }
 //----------------------------------------

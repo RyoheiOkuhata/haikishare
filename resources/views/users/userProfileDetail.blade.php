@@ -47,7 +47,7 @@
                   </div>
 
                   <div class="c-inner--body">
-                    <div class="c-card--title">このお店の商品</div>
+                    <div class="c-card--title">出品商品</div>
                     <ul class="c-card--list__flex">
                         @foreach($products as $product )
                         <li class="p-card--gallery">

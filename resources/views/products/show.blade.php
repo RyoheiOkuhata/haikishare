@@ -12,7 +12,7 @@
               >
               </sold-label>
                   <div class="c-inner--body">
-                    <ul class="">
+                    <ul class="u-center">
                            <li class="">
                               <div class="p-card--img">
                                 <img alt="文字表示" src="https://haiki.s3-us-west-1.amazonaws.com/{{$product->img}}">

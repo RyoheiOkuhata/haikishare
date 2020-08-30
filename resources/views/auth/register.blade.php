@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'お買い求めの方新規登録')
+@section('title', '店舗店舗の新規登録')
 @include('nav')
 @section('content')
     <section class="l-inner--wrapper__m" id="">

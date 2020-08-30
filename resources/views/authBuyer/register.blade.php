@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'コンビニ新規登録')
+@section('title', 'お買い求めの方新規登録')
 @include('nav')
 @section('content')
 
